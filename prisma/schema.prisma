@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model TipoAnimal {
+  id        String   @id @default(cuid())
+  descricao String
+  animais   Animal[]
+}
+
+model Animal {
+  id           String     @id @default(cuid())
+  nome         String
+  tipoAnimalId String
+  tipoAnimal   TipoAnimal @relation(fields: [tipoAnimalId], references: [id])
+  rounds       Round[]
+}
+
+model Round {
+  id             String     @id @default(cuid())
+  competidorId   String
+  competidor     Competidor @relation(fields: [competidorId], references: [id])
+  animalId       String
+  animal         Animal     @relation(fields: [animalId], references: [id])
+  data           DateTime
+  notaAnimal     Float
+  notaCompetidor Float
+  penalidade     Float
+}
+
+model Competidor {
+  id       String  @id @default(cuid())
+  nome     String
+  idade    Int
+  vitorias Int
+  cidadeId String
+  cidade   Cidade  @relation(fields: [cidadeId], references: [id])
+  rounds   Round[]
+}
+
+model Cidade {
+  id           String       @id @default(cuid())
+  descricao    String
+  estado       String
+  competidores Competidor[]
+}
