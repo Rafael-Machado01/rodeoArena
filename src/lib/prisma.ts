@@ -5,7 +5,7 @@ const adapter = new PrismaPg({
   connectionString: process.env.DATABASE_URL!,
 });
 
-export const primsa = new PrismaClient({
+export const prisma = new PrismaClient({
   adapter,
 });
 // Isso permite fazermos await prisma.findMany etc..
