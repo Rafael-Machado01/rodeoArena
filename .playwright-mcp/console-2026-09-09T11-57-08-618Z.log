@@ -1,0 +1,602 @@
+[     153ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:776
+[     181ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:776
+[  183600ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:776
+[  183641ms] [LOG] [Fast Refresh] done in 4ms @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:776
+[  186166ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:776
+[  186208ms] [LOG] [Fast Refresh] done in 5ms @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:776
+[  192502ms] [LOG] [Fast Refresh] done in 6297ms @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:776
+[  197914ms] [ERROR] ./src/components/ui/dashboard/LinkDashboard.tsx:25:9
+Error: Unterminated string constant
+  23 |       className={cn(
+  24 |         buttonVariants({ variant: "ghost", size: "default" }),
+> 25 |         ",
+     |         ^^
+  26 |         active
+  27 |           ? TailwindData.linkDashboardActive
+  28 |           : TailwindData.linkDashboardBase,
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/ui/dashboard/LinkDashboard.tsx
+    ./src/components/ui/dashboard/AppSidebar.tsx
+    ./src/app/dashboard/layout.tsx @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:1052
+[  200628ms] [LOG] [Fast Refresh] done in 14414ms @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:776
+[  216579ms] [LOG] [Fast Refresh] done in 30363ms @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:776
+[  259257ms] [ERROR] ./src/components/ui/dashboard/AppSidebar.tsx:15:10
+Error: You're importing a module that depends on `usePathname` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  13 | import LinkDashboard from "@/components/ui/dashboard/LinkDashboard";
+  14 | import { DashboardLinks } from "@/constants/Dashboard-Links";
+> 15 | import { usePathname } from "next/navigation";
+     |          ^^^^^^^^^^^
+  16 |
+  17 | interface AppSideBarProps {
+  18 |   user: userType | null;
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/ui/dashboard/AppSidebar.tsx
+    ./src/app/dashboard/layout.tsx @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:1052
+[  259265ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:776
+[  274044ms] [ERROR] ./src/components/ui/dashboard/AppSidebar.tsx:15:10
+Error: You're importing a module that depends on `usePathname` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  13 | import LinkDashboard from "@/components/ui/dashboard/LinkDashboard";
+  14 | import { DashboardLinks } from "@/constants/Dashboard-Links";
+> 15 | import { usePathname } from "next/navigation";
+     |          ^^^^^^^^^^^
+  16 |
+  17 | interface AppSideBarProps {
+  18 |   user: userType | null;
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/ui/dashboard/AppSidebar.tsx
+    ./src/app/dashboard/layout.tsx @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:1052
+[  279077ms] [ERROR] ./src/components/ui/dashboard/AppSidebar.tsx:15:10
+Error: You're importing a module that depends on `usePathname` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  13 | import LinkDashboard from "@/components/ui/dashboard/LinkDashboard";
+  14 | import { DashboardLinks } from "@/constants/Dashboard-Links";
+> 15 | import { usePathname } from "next/navigation";
+     |          ^^^^^^^^^^^
+  16 |
+  17 | interface AppSideBarProps {
+  18 |   user: userType | null;
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/ui/dashboard/AppSidebar.tsx
+    ./src/app/dashboard/layout.tsx @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:1052
+[  309844ms] [ERROR] ./src/components/ui/dashboard/AppSidebar.tsx:15:10
+Error: You're importing a module that depends on `usePathname` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  13 | import LinkDashboard from "@/components/ui/dashboard/LinkDashboard";
+  14 | import { DashboardLinks } from "@/constants/Dashboard-Links";
+> 15 | import { usePathname } from "next/navigation";
+     |          ^^^^^^^^^^^
+  16 |
+  17 | interface AppSideBarProps {
+  18 |   user: userType | null;
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/ui/dashboard/AppSidebar.tsx
+    ./src/app/dashboard/layout.tsx @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:1052
+[  315511ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:776
+[  318304ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/dashboard:0
+[  318512ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/1yi7_react-dom_1papa4l._.js:15093
+[  318577ms] Error: ./src/components/ui/dashboard/CardUser.tsx:9:16
+Error: It is not allowed to define inline "use server" annotated Server Actions in Client Components.
+    To use Server Actions in a Client Component, you can either export them from a separate file with "use server" at the top, or pass them down through props from a Server Component.
+    
+    Read more: https://nextjs.org/docs/app/api-reference/directives/use-server#using-server-functions-in-a-client-component
+   7 | }
+   8 |
+>  9 | export default function CardUser({ user }: CardUserProps) {
+     |                ^
+  10 |   const onLogout = async () => {
+  11 |     "use server";
+  12 |     await signOut({ redirectTo: "/" });
+
+Ecmascript file had an error
+
+Generated code of loaders [next/dist/build/babel/loader] transform of file content of src/components/ui/dashboard/CardUser.tsx:
+./src/components/ui/dashboard/CardUser.tsx:87:3
+  85 | }
+  86 | async function _CardUserOnLogout() {
+> 87 |   "use server";
+     |   ^^^^^^^^^^^^
+  88 |
+  89 |   await signOut({
+  90 |     redirectTo: "/"
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/dashboard/CardUser.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Server Component]
+    ./src/app/dashboard/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/dashboard/CardUser.tsx [Client Component SSR]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Client Component SSR]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Server Component]
+    ./src/app/dashboard/layout.tsx [Server Component]
+
+
+    at <unknown> (Error: ./src/components/ui/dashboard/CardUser.tsx:9:16)
+    at <unknown> (./src/components/ui/dashboard/CardUser.tsx:87:3)
+    at Object.getCompilationErrors (file:///home/sprint/w/projects/rodeo-arena/node_modules/.pnpm/next@16.3.3_@babel+core@7.29.7_supports-color@7.2.0__@types+node@20.19.43_babel-plugin-_a5b65ffe99f34c8eab7c403d516da012/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1417:59)
+    at DevBundlerService.getCompilationError (file:///home/sprint/w/projects/rodeo-arena/node_modules/.pnpm/next@16.3.3_@babel+core@7.29.7_supports-color@7.2.0__@types+node@20.19.43_babel-plugin-_a5b65ffe99f34c8eab7c403d516da012/node_modules/next/dist/server/lib/dev-bundler-service.js:59:55)
+    at DevServer.getCompilationError (file:///home/sprint/w/projects/rodeo-arena/node_modules/.pnpm/next@16.3.3_@babel+core@7.29.7_supports-color@7.2.0__@types+node@20.19.43_babel-plugin-_a5b65ffe99f34c8eab7c403d516da012/node_modules/next/dist/server/dev/next-dev-server.js:754:42)
+    at DevServer.findPageComponents (file:///home/sprint/w/projects/rodeo-arena/node_modules/.pnpm/next@16.3.3_@babel+core@7.29.7_supports-color@7.2.0__@types+node@20.19.43_babel-plugin-_a5b65ffe99f34c8eab7c403d516da012/node_modules/next/dist/server/dev/next-dev-server.js:724:43)
+    at async DevServer.renderErrorToResponseImpl (file:///home/sprint/w/projects/rodeo-arena/node_modules/.pnpm/next@16.3.3_@babel+core@7.29.7_supports-color@7.2.0__@types+node@20.19.43_babel-plugin-_a5b65ffe99f34c8eab7c403d516da012/node_modules/next/dist/server/base-server.js:1828:26)
+[  318575ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/1cde_next_dist_1qqmpnj._.js:756
+[  318582ms] [ERROR] ./src/components/ui/dashboard/CardUser.tsx:9:16
+Error: It is not allowed to define inline "use server" annotated Server Actions in Client Components.
+    To use Server Actions in a Client Component, you can either export them from a separate file with "use server" at the top, or pass them down through props from a Server Component.
+    
+    Read more: https://nextjs.org/docs/app/api-reference/directives/use-server#using-server-functions-in-a-client-component
+   7 | }
+   8 |
+>  9 | export default function CardUser({ user }: CardUserProps) {
+     |                ^
+  10 |   const onLogout = async () => {
+  11 |     "use server";
+  12 |     await signOut({ redirectTo: "/" });
+
+Ecmascript file had an error
+
+Generated code of loaders [next/dist/build/babel/loader] transform of file content of src/components/ui/dashboard/CardUser.tsx:
+./src/components/ui/dashboard/CardUser.tsx:87:3
+  85 | }
+  86 | async function _CardUserOnLogout() {
+> 87 |   "use server";
+     |   ^^^^^^^^^^^^
+  88 |
+  89 |   await signOut({
+  90 |     redirectTo: "/"
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/dashboard/CardUser.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Server Component]
+    ./src/app/dashboard/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/dashboard/CardUser.tsx [Client Component SSR]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Client Component SSR]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Server Component]
+    ./src/app/dashboard/layout.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/1cde_next_dist_1qqmpnj._.js:1817
+[  318583ms] [ERROR] ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/connection-parameters.js:3:13
+Error: Module not found: Can't resolve 'dns'
+  1 | 'use strict'
+  2 |
+> 3 | const dns = require('dns')
+    |             ^^^^^^^^^^^^^^
+  4 |
+  5 | const defaults = require('./defaults')
+  6 |
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/connection-parameters.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/client.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/index.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/esm/index.mjs [Client Component Browser]
+    ./node_modules/.pnpm/@prisma+adapter-pg@7.9.1/node_modules/@prisma/adapter-pg/dist/index.mjs [Client Component Browser]
+    ./src/lib/prisma.ts [Client Component Browser]
+    ./src/lib/auth.ts [Client Component Browser]
+    ./src/components/ui/dashboard/CardUser.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Server Component]
+    ./src/app/dashboard/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/1cde_next_dist_1qqmpnj._.js:1817
+[  318583ms] [ERROR] ./node_modules/.pnpm/pg-connection-string@2.14.0/node_modules/pg-connection-string/index.js:88:70
+Error: Module not found: Can't resolve 'fs'
+  86 |
+  87 |   // Only try to load fs if we expect to read from the disk
+> 88 |   const fs = config.sslcert || config.sslkey || config.sslrootcert ? require('fs') : null
+     |                                                                      ^^^^^^^^^^^^^
+  89 |
+  90 |   if (config.sslcert) {
+  91 |     config.ssl.cert = fs.readFileSync(config.sslcert).toString()
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/.pnpm/pg-connection-string@2.14.0/node_modules/pg-connection-string/index.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/connection-parameters.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/client.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/index.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/esm/index.mjs [Client Component Browser]
+    ./node_modules/.pnpm/@prisma+adapter-pg@7.9.1/node_modules/@prisma/adapter-pg/dist/index.mjs [Client Component Browser]
+    ./src/lib/prisma.ts [Client Component Browser]
+    ./src/lib/auth.ts [Client Component Browser]
+    ./src/components/ui/dashboard/CardUser.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Server Component]
+    ./src/app/dashboard/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/1cde_next_dist_1qqmpnj._.js:1817
+[  318583ms] [ERROR] ./node_modules/.pnpm/pgpass@1.0.5/node_modules/pgpass/lib/index.js:4:10
+Error: Module not found: Can't resolve 'fs'
+  2 |
+  3 | var path = require('path')
+> 4 |   , fs = require('fs')
+    |          ^^^^^^^^^^^^^
+  5 |   , helper = require('./helper.js')
+  6 | ;
+  7 |
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/.pnpm/pgpass@1.0.5/node_modules/pgpass/lib/index.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/client.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/index.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/esm/index.mjs [Client Component Browser]
+    ./node_modules/.pnpm/@prisma+adapter-pg@7.9.1/node_modules/@prisma/adapter-pg/dist/index.mjs [Client Component Browser]
+    ./src/lib/prisma.ts [Client Component Browser]
+    ./src/lib/auth.ts [Client Component Browser]
+    ./src/components/ui/dashboard/CardUser.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Server Component]
+    ./src/app/dashboard/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/1cde_next_dist_1qqmpnj._.js:1817
+[  318583ms] [ERROR] ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/connection.js:116:17
+Error: Module not found: Can't resolve 'net'
+  114 |     }
+  115 |
+> 116 |     const net = require('net')
+      |                 ^^^^^^^^^^^^^^
+  117 |     if (net.isIP && net.isIP(host) === 0) {
+  118 |       options.servername = host
+  119 |     }
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/connection.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/index.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/esm/index.mjs [Client Component Browser]
+    ./node_modules/.pnpm/@prisma+adapter-pg@7.9.1/node_modules/@prisma/adapter-pg/dist/index.mjs [Client Component Browser]
+    ./src/lib/prisma.ts [Client Component Browser]
+    ./src/lib/auth.ts [Client Component Browser]
+    ./src/components/ui/dashboard/CardUser.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Server Component]
+    ./src/app/dashboard/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/1cde_next_dist_1qqmpnj._.js:1817
+[  318583ms] [ERROR] ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/stream.js:22:17
+Error: Module not found: Can't resolve 'net'
+  20 | function getNodejsStreamFuncs() {
+  21 |   function getStream(ssl) {
+> 22 |     const net = require('net')
+     |                 ^^^^^^^^^^^^^^
+  23 |     return new net.Socket()
+  24 |   }
+  25 |
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/stream.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/connection.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/index.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/esm/index.mjs [Client Component Browser]
+    ./node_modules/.pnpm/@prisma+adapter-pg@7.9.1/node_modules/@prisma/adapter-pg/dist/index.mjs [Client Component Browser]
+    ./src/lib/prisma.ts [Client Component Browser]
+    ./src/lib/auth.ts [Client Component Browser]
+    ./src/components/ui/dashboard/CardUser.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Server Component]
+    ./src/app/dashboard/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/1cde_next_dist_1qqmpnj._.js:1817
+[  318583ms] [ERROR] ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/stream.js:27:17
+Error: Module not found: Can't resolve 'tls'
+  25 |
+  26 |   function getSecureStream(options) {
+> 27 |     const tls = require('tls')
+     |                 ^^^^^^^^^^^^^^
+  28 |     return tls.connect(options)
+  29 |   }
+  30 |   return {
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/stream.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/connection.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/index.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/esm/index.mjs [Client Component Browser]
+    ./node_modules/.pnpm/@prisma+adapter-pg@7.9.1/node_modules/@prisma/adapter-pg/dist/index.mjs [Client Component Browser]
+    ./src/lib/prisma.ts [Client Component Browser]
+    ./src/lib/auth.ts [Client Component Browser]
+    ./src/components/ui/dashboard/CardUser.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Server Component]
+    ./src/app/dashboard/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/1cde_next_dist_1qqmpnj._.js:1817
+[  318583ms] [ERROR] ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/utils.js:5:20
+Error: Module not found: Can't resolve 'util/types'
+  3 | const defaults = require('./defaults')
+  4 |
+> 5 | const { isDate } = require('util/types')
+    |                    ^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | function escapeElement(elementRepresentation) {
+  8 |   const escaped = elementRepresentation.replace(/\\/g, '\\\\').replace(/"/g, '\\"')
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/utils.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/index.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/esm/index.mjs [Client Component Browser]
+    ./node_modules/.pnpm/@prisma+adapter-pg@7.9.1/node_modules/@prisma/adapter-pg/dist/index.mjs [Client Component Browser]
+    ./src/lib/prisma.ts [Client Component Browser]
+    ./src/lib/auth.ts [Client Component Browser]
+    ./src/components/ui/dashboard/CardUser.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Server Component]
+    ./src/app/dashboard/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/1cde_next_dist_1qqmpnj._.js:1817
+[  318636ms] [ERROR] ./src/components/ui/dashboard/CardUser.tsx:9:16
+Error: It is not allowed to define inline "use server" annotated Server Actions in Client Components.
+    To use Server Actions in a Client Component, you can either export them from a separate file with "use server" at the top, or pass them down through props from a Server Component.
+    
+    Read more: https://nextjs.org/docs/app/api-reference/directives/use-server#using-server-functions-in-a-client-component
+   7 | }
+   8 |
+>  9 | export default function CardUser({ user }: CardUserProps) {
+     |                ^
+  10 |   const onLogout = async () => {
+  11 |     "use server";
+  12 |     await signOut({ redirectTo: "/" });
+
+Ecmascript file had an error
+
+Generated code of loaders [next/dist/build/babel/loader] transform of file content of src/components/ui/dashboard/CardUser.tsx:
+./src/components/ui/dashboard/CardUser.tsx:87:3
+  85 | }
+  86 | async function _CardUserOnLogout() {
+> 87 |   "use server";
+     |   ^^^^^^^^^^^^
+  88 |
+  89 |   await signOut({
+  90 |     redirectTo: "/"
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/dashboard/CardUser.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Server Component]
+    ./src/app/dashboard/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/dashboard/CardUser.tsx [Client Component SSR]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Client Component SSR]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Server Component]
+    ./src/app/dashboard/layout.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/1cde_next_dist_1qqmpnj._.js:1817
+[  318636ms] [ERROR] ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/connection-parameters.js:3:13
+Error: Module not found: Can't resolve 'dns'
+  1 | 'use strict'
+  2 |
+> 3 | const dns = require('dns')
+    |             ^^^^^^^^^^^^^^
+  4 |
+  5 | const defaults = require('./defaults')
+  6 |
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/connection-parameters.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/client.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/index.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/esm/index.mjs [Client Component Browser]
+    ./node_modules/.pnpm/@prisma+adapter-pg@7.9.1/node_modules/@prisma/adapter-pg/dist/index.mjs [Client Component Browser]
+    ./src/lib/prisma.ts [Client Component Browser]
+    ./src/lib/auth.ts [Client Component Browser]
+    ./src/components/ui/dashboard/CardUser.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Server Component]
+    ./src/app/dashboard/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/1cde_next_dist_1qqmpnj._.js:1817
+[  318636ms] [ERROR] ./node_modules/.pnpm/pg-connection-string@2.14.0/node_modules/pg-connection-string/index.js:88:70
+Error: Module not found: Can't resolve 'fs'
+  86 |
+  87 |   // Only try to load fs if we expect to read from the disk
+> 88 |   const fs = config.sslcert || config.sslkey || config.sslrootcert ? require('fs') : null
+     |                                                                      ^^^^^^^^^^^^^
+  89 |
+  90 |   if (config.sslcert) {
+  91 |     config.ssl.cert = fs.readFileSync(config.sslcert).toString()
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/.pnpm/pg-connection-string@2.14.0/node_modules/pg-connection-string/index.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/connection-parameters.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/client.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/index.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/esm/index.mjs [Client Component Browser]
+    ./node_modules/.pnpm/@prisma+adapter-pg@7.9.1/node_modules/@prisma/adapter-pg/dist/index.mjs [Client Component Browser]
+    ./src/lib/prisma.ts [Client Component Browser]
+    ./src/lib/auth.ts [Client Component Browser]
+    ./src/components/ui/dashboard/CardUser.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Server Component]
+    ./src/app/dashboard/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/1cde_next_dist_1qqmpnj._.js:1817
+[  318636ms] [ERROR] ./node_modules/.pnpm/pgpass@1.0.5/node_modules/pgpass/lib/index.js:4:10
+Error: Module not found: Can't resolve 'fs'
+  2 |
+  3 | var path = require('path')
+> 4 |   , fs = require('fs')
+    |          ^^^^^^^^^^^^^
+  5 |   , helper = require('./helper.js')
+  6 | ;
+  7 |
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/.pnpm/pgpass@1.0.5/node_modules/pgpass/lib/index.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/client.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/index.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/esm/index.mjs [Client Component Browser]
+    ./node_modules/.pnpm/@prisma+adapter-pg@7.9.1/node_modules/@prisma/adapter-pg/dist/index.mjs [Client Component Browser]
+    ./src/lib/prisma.ts [Client Component Browser]
+    ./src/lib/auth.ts [Client Component Browser]
+    ./src/components/ui/dashboard/CardUser.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Server Component]
+    ./src/app/dashboard/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/1cde_next_dist_1qqmpnj._.js:1817
+[  318636ms] [ERROR] ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/connection.js:116:17
+Error: Module not found: Can't resolve 'net'
+  114 |     }
+  115 |
+> 116 |     const net = require('net')
+      |                 ^^^^^^^^^^^^^^
+  117 |     if (net.isIP && net.isIP(host) === 0) {
+  118 |       options.servername = host
+  119 |     }
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/connection.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/index.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/esm/index.mjs [Client Component Browser]
+    ./node_modules/.pnpm/@prisma+adapter-pg@7.9.1/node_modules/@prisma/adapter-pg/dist/index.mjs [Client Component Browser]
+    ./src/lib/prisma.ts [Client Component Browser]
+    ./src/lib/auth.ts [Client Component Browser]
+    ./src/components/ui/dashboard/CardUser.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Server Component]
+    ./src/app/dashboard/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/1cde_next_dist_1qqmpnj._.js:1817
+[  318636ms] [ERROR] ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/stream.js:22:17
+Error: Module not found: Can't resolve 'net'
+  20 | function getNodejsStreamFuncs() {
+  21 |   function getStream(ssl) {
+> 22 |     const net = require('net')
+     |                 ^^^^^^^^^^^^^^
+  23 |     return new net.Socket()
+  24 |   }
+  25 |
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/stream.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/connection.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/index.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/esm/index.mjs [Client Component Browser]
+    ./node_modules/.pnpm/@prisma+adapter-pg@7.9.1/node_modules/@prisma/adapter-pg/dist/index.mjs [Client Component Browser]
+    ./src/lib/prisma.ts [Client Component Browser]
+    ./src/lib/auth.ts [Client Component Browser]
+    ./src/components/ui/dashboard/CardUser.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Server Component]
+    ./src/app/dashboard/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/1cde_next_dist_1qqmpnj._.js:1817
+[  318636ms] [ERROR] ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/stream.js:27:17
+Error: Module not found: Can't resolve 'tls'
+  25 |
+  26 |   function getSecureStream(options) {
+> 27 |     const tls = require('tls')
+     |                 ^^^^^^^^^^^^^^
+  28 |     return tls.connect(options)
+  29 |   }
+  30 |   return {
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/stream.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/connection.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/index.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/esm/index.mjs [Client Component Browser]
+    ./node_modules/.pnpm/@prisma+adapter-pg@7.9.1/node_modules/@prisma/adapter-pg/dist/index.mjs [Client Component Browser]
+    ./src/lib/prisma.ts [Client Component Browser]
+    ./src/lib/auth.ts [Client Component Browser]
+    ./src/components/ui/dashboard/CardUser.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Server Component]
+    ./src/app/dashboard/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/1cde_next_dist_1qqmpnj._.js:1817
+[  318636ms] [ERROR] ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/utils.js:5:20
+Error: Module not found: Can't resolve 'util/types'
+  3 | const defaults = require('./defaults')
+  4 |
+> 5 | const { isDate } = require('util/types')
+    |                    ^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | function escapeElement(elementRepresentation) {
+  8 |   const escaped = elementRepresentation.replace(/\\/g, '\\\\').replace(/"/g, '\\"')
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/utils.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/lib/index.js [Client Component Browser]
+    ./node_modules/.pnpm/pg@8.23.0/node_modules/pg/esm/index.mjs [Client Component Browser]
+    ./node_modules/.pnpm/@prisma+adapter-pg@7.9.1/node_modules/@prisma/adapter-pg/dist/index.mjs [Client Component Browser]
+    ./src/lib/prisma.ts [Client Component Browser]
+    ./src/lib/auth.ts [Client Component Browser]
+    ./src/components/ui/dashboard/CardUser.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Client Component Browser]
+    ./src/components/ui/dashboard/AppSidebar.tsx [Server Component]
+    ./src/app/dashboard/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/1cde_next_dist_1qqmpnj._.js:1817
+[  329361ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/1cde_next_dist_1qqmpnj._.js:756
+[  329489ms] [ERROR] ./src/components/ui/dashboard/AppSidebar.tsx:15:10
+Error: You're importing a module that depends on `usePathname` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  13 | import LinkDashboard from "@/components/ui/dashboard/LinkDashboard";
+  14 | import { DashboardLinks } from "@/constants/Dashboard-Links";
+> 15 | import { usePathname } from "next/navigation";
+     |          ^^^^^^^^^^^
+  16 |
+  17 | interface AppSideBarProps {
+  18 |   user: userType | null;
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/ui/dashboard/AppSidebar.tsx
+    ./src/app/dashboard/layout.tsx @ http://localhost:3000/_next/static/chunks/1cde_next_dist_1qqmpnj._.js:1817
+[  364226ms] [ERROR] ./src/components/ui/dashboard/AppSidebar.tsx:15:10
+Error: You're importing a module that depends on `usePathname` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  13 | import LinkDashboard from "@/components/ui/dashboard/LinkDashboard";
+  14 | import { DashboardLinks } from "@/constants/Dashboard-Links";
+> 15 | import { usePathname } from "next/navigation";
+     |          ^^^^^^^^^^^
+  16 |
+  17 | interface AppSideBarProps {
+  18 |   user: userType | null;
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/ui/dashboard/AppSidebar.tsx
+    ./src/app/dashboard/layout.tsx @ http://localhost:3000/_next/static/chunks/1cde_next_dist_1qqmpnj._.js:1817
