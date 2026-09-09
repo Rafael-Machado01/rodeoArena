@@ -4,6 +4,7 @@ export interface User {
   email: string;
   emailVerified: Date | null;
   image: string;
+  role: string;
   createdAt: Date;
   updatedAt: Date;
 }

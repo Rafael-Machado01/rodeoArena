@@ -5,13 +5,14 @@ import { TailwindData } from "@/constants/TailwindData";
 interface CardUserProps {
   user: UserType;
 }
+import EditProfile from "@/components/ui/dashboard/EditProfile";
 
 export default function CardUser({ user }: CardUserProps) {
   const onLogout = async () => {
     "use server";
     await signOut({ redirectTo: "/" });
   };
-  console.log(user.name);
+
   return (
     <div
       className={` ${TailwindData.centered} flex-col border-t border-t-rodeo-bronze/50 p-2 gap-2`}
@@ -26,7 +27,7 @@ export default function CardUser({ user }: CardUserProps) {
         />
         <div className="flex flex-col">
           <h3 className="text-text">{user.name}</h3>
-          <p className="text-text-muted">Administrador</p>
+          <p className="text-text-muted">{user.role || "Admin"}</p>
         </div>
         <button className="cursor-pointer" onClick={onLogout}>
           <Image
@@ -37,18 +38,7 @@ export default function CardUser({ user }: CardUserProps) {
           />
         </button>
       </div>
-      <button className="flex flex-row gap-1 cursor-pointer">
-        <Image
-          src="/config.svg"
-          alt="Botão de configurações"
-          width={20}
-          height={20}
-          className="fill-text-muted"
-        />
-        <span className={`text-text-muted hover:text-rodeo-gold text-sm ${TailwindData.transitionHover}`}>
-          Configurações
-        </span>
-      </button>
+      <EditProfile user={user} />
     </div>
   );
 }

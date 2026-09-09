@@ -2,7 +2,7 @@ export const TailwindData = {
   centered: "flex justify-center items-center text-center",
   spanSection: "text-rodeo-gold text-sm font-semibold",
   transitionHover: "transition-all duration-300",
-  sectionHeading: "text-text text-1xl md:text-5xl font-heading",
+  sectionHeading: "text-text text-2xl md:text-5xl font-heading",
   linkHover:
     "text-text-muted transition-colors duration-200 hover:text-rodeo-bronze",
   cardBase: "shadow-2xl rounded-md border",
