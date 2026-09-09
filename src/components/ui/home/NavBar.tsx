@@ -1,5 +1,6 @@
 import Logo from "@/components/ui/home/Logo";
-import { NavbarLinks } from "@/constants/Navbar-links";
+import { TailwindData } from "@/constants/TailwindData";
+import { NavbarLinks } from "@/constants/Navbar-Links";
 import Link from "next/link";
 import { Button } from "../button";
 export default function Navbar() {
@@ -10,7 +11,7 @@ export default function Navbar() {
         <div className="flex gap-1 md:gap-8 items-center mt-0.5">
           {NavbarLinks.map((link) => (
             <Link
-              className="text-text-muted text-xs md:text-base transition-colors duration-200 hover:text-rodeo-bronze"
+              className={`${TailwindData.linkHover} text-xs md:text-base`}
               key={link.id}
               href={link.href}
             >

@@ -1,0 +1,23 @@
+- generic [active] [ref=f6e1]:
+  - generic [ref=f6e2]:
+    - generic [ref=f6e5]:
+      - generic [ref=f6e7]:
+        - img "Um chapeu de cowboy" [ref=f6e8]
+        - generic [ref=f6e9]: rodeoArena
+      - generic [ref=f6e10]:
+        - link "Dashboard" [ref=f6e11] [cursor=pointer]:
+          - /url: /dashboard
+        - link "Rounds" [ref=f6e13] [cursor=pointer]:
+          - /url: /dashboard/rounds
+        - link "Simulador" [ref=f6e15] [cursor=pointer]:
+          - /url: /dashboard/simulator
+        - link "Competidores" [ref=f6e17] [cursor=pointer]:
+          - /url: /dashboard/competitors
+        - link "Animais" [ref=f6e19] [cursor=pointer]:
+          - /url: /dashboard/animals
+        - link "Ranking" [ref=f6e21] [cursor=pointer]:
+          - /url: /dashboard/ranking
+    - main [ref=f6e24]:
+      - button "Toggle Sidebar" [ref=f6e25] [cursor=pointer]
+      - heading "Olá almir" [level=1] [ref=f6e27]
+  - button "Open Next.js Dev Tools" [ref=f6e33] [cursor=pointer]

@@ -6,7 +6,7 @@ export default function Whats() {
     <section className="mt-20">
       <div className={`${TailwindData.centered} flex-col gap-4`}>
         <span className={TailwindData.spanSection}>TECNOLOGIA NA ARENA</span>
-        <h2 className="text-text text-1xl md:text-5xl font-heading">
+        <h2 className={TailwindData.sectionHeading}>
           O que é o rodeoArena?
         </h2>
         <p className="text-text-muted">

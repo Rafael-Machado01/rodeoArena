@@ -1,6 +1,8 @@
+import type { LucideIcon } from "lucide-react";
+import { MonitorCog, Trophy, Calculator } from "lucide-react";
 interface WhatsCardsContentType {
   id: number;
-  src: string;
+  icon: LucideIcon;
   title: string;
   description: string;
 }
@@ -8,21 +10,21 @@ interface WhatsCardsContentType {
 export const WhatsCardsContent: WhatsCardsContentType[] = [
   {
     id: 1,
-    src: "/config.svg",
+    icon: MonitorCog,
     title: "Gestão Completa",
     description:
       "Controle absoluto sobre inscrições, sorterios de touros, notas dos juízes e cronômetro de 8 segundos em tempo real.",
   },
   {
     id: 2,
-    src: "/trophy.svg",
+    icon: Trophy,
     title: "Ranking Inteligente",
     description:
       "Tabelas atualizadas automaticamente por competições com cálculo de médias, melhores notas e índice de paradas.",
   },
   {
     id: 3,
-    src: "/calc.svg",
+    icon: Calculator,
     title: "Simulação Realista",
     description:
       "Simule montarias com probabilidades reais calculadas pelo histórico de desempenho de cada competidor e animal.",

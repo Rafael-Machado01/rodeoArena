@@ -1,17 +1,16 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { TailwindData } from "@/constants/TailwindData";
 import Logo from "@/components/ui/home/Logo";
-import { signIn } from "@/auth";
+import { signIn } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 export default function Login() {
   return (
     <main className={`min-h-screen ${TailwindData.centered}`}>
-      <Card className="bg-rodeo-surface shadow-2xl border border-rodeo-bronze/20 rounded-md p-8 w-full max-w-md">
-        <CardContent className="flex flex-col justify-center items-center gap-4">
+      <Card className={`bg-rodeo-surface border-rodeo-bronze/20 p-8 w-full max-w-md ${TailwindData.cardBase}`}>
+        <CardContent className={`${TailwindData.centered} flex-col gap-4`}>
           <Logo />
-
           <div className="text-center">
             <h2 className="text-text font-heading text-2xl mt-2">
               Bem-vindo de volta
