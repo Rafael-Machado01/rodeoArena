@@ -1,0 +1,13 @@
+- generic [active] [ref=f3e1]:
+  - button "Open Next.js Dev Tools" [ref=f3e7] [cursor=pointer]
+  - main [ref=f3e12]:
+    - button "Toggle Sidebar" [ref=f3e13] [cursor=pointer]
+    - main [ref=f3e15]:
+      - generic [ref=f3e16]:
+        - generic [ref=f3e17]:
+          - heading "Animais" [level=1] [ref=f3e18]
+          - paragraph [ref=f3e19]: Acompanhamento e estatisticas dos atletas de quatro patas.
+        - button [ref=f3e20] [cursor=pointer]
+  - alert [ref=f3e22]
+  - generic:
+    - region "Notifications"

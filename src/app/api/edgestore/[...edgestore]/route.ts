@@ -1,15 +1,12 @@
 import { initEdgeStore } from "@edgestore/server";
-import {
-  type CreateContextOptions,
-  createEdgeStoreNextHandler,
-} from "@edgestore/server/adapters/next/app";
+import { createEdgeStoreNextHandler } from "@edgestore/server/adapters/next/app";
 import { auth } from "@/lib/auth";
 
 type Context = {
   userId: string | null;
 };
 
-async function createContext({ req }: CreateContextOptions): Promise<Context> {
+async function createContext(): Promise<Context> {
   const session = await auth(); // sua sessão já existente
   return { userId: session?.user?.id ?? null };
 }
@@ -28,7 +25,7 @@ const edgeStoreRouter = es.router({
     // necessário se quiser deletar arquivos pelo client
     // (útil pro problema dos arquivos órfãos: troca de avatar/capa)
     .beforeDelete(({ ctx, fileInfo }) => {
-      return fileInfo.path.includes(ctx.userId!); // só apaga o que é dele
+      return fileInfo.path.author === ctx.userId; // só apaga o que é dele
     }),
 });
 
