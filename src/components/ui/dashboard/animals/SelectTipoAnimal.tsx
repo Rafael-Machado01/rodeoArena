@@ -6,7 +6,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import type TipoAnimalOption from "@/types/TipoAnimalOption";
+import type TipoAnimalOption from "@/types/TipoAnimal";
 
 interface SelectTipoAnimalProps {
   items: TipoAnimalOption[];
@@ -24,7 +24,8 @@ export default function SelectTipoAnimal({
       value={value}
       onValueChange={onChanged}
       itemToStringLabel={(itemValue) =>
-        items.find((item) => item.value === itemValue)?.label ?? String(itemValue)
+        items.find((item) => item.value === itemValue)?.label ??
+        String(itemValue)
       }
     >
       <SelectTrigger className="w-45">

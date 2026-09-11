@@ -16,7 +16,7 @@ import { Field, FieldGroup } from "@/components/ui/field";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import SelectTipoAnimal from "./SelectTipoAnimal";
-import type TipoAnimalOption from "@/types/TipoAnimalOption";
+import type TipoAnimalOption from "@/types/TipoAnimal";
 import { useActionState, useEffect, useState } from "react";
 import { toast } from "../../toast";
 

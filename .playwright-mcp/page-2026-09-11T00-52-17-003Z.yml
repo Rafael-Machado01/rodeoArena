@@ -1,0 +1,65 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - img "Um chapeu de cowboy" [ref=e6]
+        - generic [ref=e7]: rodeoArena
+      - generic [ref=e8]:
+        - link "Início" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "Competidores" [ref=e10] [cursor=pointer]:
+          - /url: "#competidores"
+        - link "Animais" [ref=e11] [cursor=pointer]:
+          - /url: "#animais"
+        - link [ref=e12] [cursor=pointer]:
+          - /url: /login
+          - button "Acessar" [ref=e13]
+    - generic [ref=e15]:
+      - generic [ref=e16]: SISTEMA DE RODEIO
+      - heading "Cada Round, Registrado." [level=1] [ref=e17]
+      - paragraph [ref=e18]: Gerencie competidores, animais,e rounds de rodeio em um sistema pensado para quem leva o esporte a sério.
+      - generic [ref=e19]:
+        - link [ref=e20] [cursor=pointer]:
+          - /url: /login
+          - button "Acessar o sistema" [ref=e21]
+        - link [ref=e22] [cursor=pointer]:
+          - /url: "#simulador"
+          - button "Simular um round" [ref=e23]
+    - generic [ref=e25]:
+      - generic [ref=e26]: TECNOLOGIA NA ARENA
+      - heading "O que é o rodeoArena?" [level=2] [ref=e27]
+      - paragraph [ref=e28]: A plataforma digital construída para digitalizar,orgainzar e gerenciar todos os aspectos dos rodeios profissionais. Unimos tradição e tecnlogia.
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e31]: Gestão Completa
+          - paragraph [ref=e49]: Controle absoluto sobre inscrições, sorterios de touros, notas dos juízes e cronômetro de 8 segundos em tempo real.
+        - generic [ref=e50]:
+          - generic [ref=e51]: Ranking Inteligente
+          - paragraph [ref=e64]: Tabelas atualizadas automaticamente por competições com cálculo de médias, melhores notas e índice de paradas.
+        - generic [ref=e65]:
+          - generic [ref=e66]: Simulação Realista
+          - paragraph [ref=e75]: Simule montarias com probabilidades reais calculadas pelo histórico de desempenho de cada competidor e animal.
+    - generic [ref=e76]:
+      - heading "Pronto para gerenciar seus rounds?" [level=5] [ref=e77]
+      - paragraph [ref=e78]: Acesse as melhores ferramentas de acompanhamento profissional de rodeio. Crie sua conta hoje mesmo.
+      - button "Criar minha conta grátis" [ref=e79] [cursor=pointer]
+    - generic [ref=e80]:
+      - generic [ref=e81]:
+        - generic [ref=e82]:
+          - generic [ref=e83]:
+            - img "Um chapeu de cowboy" [ref=e84]
+            - generic [ref=e85]: rodeoArena
+          - paragraph [ref=e86]: Plataforma de alta performance para gerencimento e cronomentragem oficial de rodeios profissionais.
+        - generic [ref=e87]:
+          - heading "Plataforma" [level=4] [ref=e88]
+          - link "Início" [ref=e89] [cursor=pointer]:
+            - /url: /
+          - link "Competidores" [ref=e90] [cursor=pointer]:
+            - /url: "#competidores"
+          - link "Animais" [ref=e91] [cursor=pointer]:
+            - /url: "#animais"
+      - generic [ref=e92]:
+        - paragraph [ref=e93]: rodeoArena © 2026. Lincense MIT.
+        - link "🔗 Github" [ref=e94] [cursor=pointer]:
+          - /url: github.com/Rafael-Machado01
+  - button "Open Next.js Dev Tools" [ref=e100] [cursor=pointer]

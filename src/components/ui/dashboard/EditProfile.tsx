@@ -115,11 +115,7 @@ export default function EditarPerfil({ user }: EditarPerfiProps) {
                       className="h-14 w-14 object-cover rounded-full"
                     />
                   ) : (
-                    <div
-                      className={`h-14 w-14 rounded-full bg-rodeo-bronze/30 text-text text-sm ${TailwindData.centered}`}
-                    >
-                      {user.name?.charAt(0).toUpperCase()}
-                    </div>
+                    ""
                   )}
                   <span
                     className={`absolute inset-0 ${TailwindData.centered} rounded-full bg-black/40 text-xs text-text `}

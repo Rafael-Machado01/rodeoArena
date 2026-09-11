@@ -1,0 +1,17 @@
+- generic [active] [ref=f1e1]:
+  - main [ref=f1e2]:
+    - generic [ref=f1e4]:
+      - generic [ref=f1e5]:
+        - img "Um chapeu de cowboy" [ref=f1e6]
+        - generic [ref=f1e7]: rodeoArena
+      - generic [ref=f1e8]:
+        - heading "Bem-vindo de volta" [level=2] [ref=f1e9]
+        - paragraph [ref=f1e10]: Acesse o sistema para gerenciar seus rounds.
+      - button [ref=f1e12] [cursor=pointer]:
+        - img "Logo do GitHub" [ref=f1e13]
+        - text: Entrar com GitHub
+      - generic [ref=f1e14]: ou
+      - button [ref=f1e19] [cursor=pointer]:
+        - img "Logo do Google" [ref=f1e20]
+        - text: Entrar com Google
+  - button "Open Next.js Dev Tools" [ref=f1e26] [cursor=pointer]

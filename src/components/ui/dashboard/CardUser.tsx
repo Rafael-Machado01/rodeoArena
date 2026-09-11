@@ -27,11 +27,7 @@ export default function CardUser({ user }: CardUserProps) {
             className="rounded-full object-cover w-9 h-9"
           />
         ) : (
-          <div
-            className={`flex w-9 h-9 items-center justify-center rounded-full bg-rodeo-bronze/30 text-text text-sm ${TailwindData.centered}`}
-          >
-            {user.name?.charAt(0).toUpperCase()}
-          </div>
+          ""
         )}
         <div className="flex flex-col">
           <h3 className="text-text">{user.name}</h3>
