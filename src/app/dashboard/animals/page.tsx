@@ -1,12 +1,15 @@
 import NewAnimal from "@/components/ui/dashboard/animals/NewAnimal";
-import { getTiposAnimals } from "@/actions/animals";
+import { getTiposAnimals, getAnimals } from "@/actions/animals";
+import { DataAnimal } from "@/components/ui/dashboard/animals/DataAnimal";
 
 export default async function AnimalsPage() {
-  const tipoAnimais = await getTiposAnimals();
-  const typedAnimais = tipoAnimais.map((t) => ({
+  const tipoAnimals = await getTiposAnimals();
+  const typedAnimals = tipoAnimals.map((t) => ({
     label: t.descricao,
     value: t.id,
   }));
+
+  const animals = await getAnimals();
   return (
     <main className="m-3 p-2 flex justify-between items-center gap-4">
       <div>
@@ -15,7 +18,10 @@ export default async function AnimalsPage() {
           Acompanhamento e estatisticas dos atletas de quatro patas.
         </p>
       </div>
-      <NewAnimal tipoAnimal={typedAnimais} />
+      <NewAnimal tipoAnimal={typedAnimals} />
+      <div>
+        <DataAnimal animais={animals} tipoAnimal={typedAnimals} />
+      </div>
     </main>
   );
 }
