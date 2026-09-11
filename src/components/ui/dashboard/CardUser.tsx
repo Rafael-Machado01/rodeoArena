@@ -18,13 +18,21 @@ export default function CardUser({ user }: CardUserProps) {
       className={` ${TailwindData.centered} flex-col border-t border-t-rodeo-bronze/50 p-2 gap-2`}
     >
       <div className="flex mt-1 gap-2">
-        <Image
-          src={user.image}
-          alt={`Sua foto de usuário`}
-          width={35}
-          height={35}
-          className="rounded-full object-cover w-9 h-9"
-        />
+        {user.image ? (
+          <Image
+            src={user.image}
+            alt={`Sua foto de usuário`}
+            width={35}
+            height={35}
+            className="rounded-full object-cover w-9 h-9"
+          />
+        ) : (
+          <div
+            className={`flex w-9 h-9 items-center justify-center rounded-full bg-rodeo-bronze/30 text-text text-sm ${TailwindData.centered}`}
+          >
+            {user.name?.charAt(0).toUpperCase()}
+          </div>
+        )}
         <div className="flex flex-col">
           <h3 className="text-text">{user.name}</h3>
           <p className="text-text-muted">{user.role || "Admin"}</p>

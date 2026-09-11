@@ -3,8 +3,8 @@ export interface User {
   name: string | null;
   email: string;
   emailVerified: Date | null;
-  image: string;
-  role: string;
+  image: string | null;
+  role: string | null;
   createdAt: Date;
   updatedAt: Date;
 }

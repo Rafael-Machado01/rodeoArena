@@ -4,7 +4,6 @@ import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -34,6 +33,8 @@ export default function EditarPerfil({ user }: EditarPerfiProps) {
   } as FormState);
 
   const [newImageUrl, setNewImageUrl] = useState<string | null>(null);
+
+  const avatarSrc = newImageUrl || user.image;
 
   const { edgestore } = useEdgeStore();
 
@@ -105,13 +106,21 @@ export default function EditarPerfil({ user }: EditarPerfiProps) {
                   onChange={onUploadFile}
                 />
                 <div className="relative">
-                  <Image
-                    src={newImageUrl || user.image}
-                    alt="Sua foto de perfil"
-                    width={56}
-                    height={56}
-                    className="h-14 w-14 object-cover rounded-full"
-                  />
+                  {avatarSrc ? (
+                    <Image
+                      src={avatarSrc}
+                      alt="Sua foto de perfil"
+                      width={56}
+                      height={56}
+                      className="h-14 w-14 object-cover rounded-full"
+                    />
+                  ) : (
+                    <div
+                      className={`h-14 w-14 rounded-full bg-rodeo-bronze/30 text-text text-sm ${TailwindData.centered}`}
+                    >
+                      {user.name?.charAt(0).toUpperCase()}
+                    </div>
+                  )}
                   <span
                     className={`absolute inset-0 ${TailwindData.centered} rounded-full bg-black/40 text-xs text-text `}
                   >
@@ -128,7 +137,7 @@ export default function EditarPerfil({ user }: EditarPerfiProps) {
                 id="name"
                 name="name"
                 key={user.name}
-                defaultValue={user.name}
+                defaultValue={user.name ?? ""}
               />
             </Field>
             <Field>
@@ -137,7 +146,7 @@ export default function EditarPerfil({ user }: EditarPerfiProps) {
                 id="role"
                 name="role"
                 key={user.role}
-                defaultValue={user.role}
+                defaultValue={user.role ?? ""}
               />
             </Field>
           </FieldGroup>
