@@ -16,6 +16,7 @@ model TipoAnimal {
 model Animal {
   id           String     @id @default(cuid())
   nome         String
+  imageUrl     String?
   tipoAnimalId String
   tipoAnimal   TipoAnimal @relation(fields: [tipoAnimalId], references: [id])
   rounds       Round[]
@@ -36,6 +37,7 @@ model Round {
 model Competidor {
   id       String  @id @default(cuid())
   nome     String
+  imageUrl String?
   idade    Int
   vitorias Int
   cidadeId String

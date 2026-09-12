@@ -1,0 +1,87 @@
+[     215ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:776
+[     774ms] [LOG] [Fast Refresh] done in 659ms @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:776
+[     906ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:776
+[     927ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:776
+[    3118ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[    8122ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[   84076ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:776
+[   84121ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:776
+[   84260ms] [ERROR] In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <RedirectBoundary>
+      <RedirectErrorBoundary router={{...}}>
+        <InnerLayoutRouter url="/dashboard..." tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} segmentPath={[...]} ...>
+          <SegmentViewNode type="page" pagePath="dashboard/...">
+            <SegmentTrieNode>
+            <AnimalsPage>
+              <main className="m-3 p-2">
+                <div className="flex justi...">
+                  <div>
+                  <NewAnimal tipoAnimal={[...]}>
+                    <Dialog>
+                      <DialogRoot data-slot="dialog">
+                        <DialogTrigger>
+                          <DialogTrigger data-slot="dialog-tri...">
+>                           <button
+>                             type="button"
+>                             onClick={function}
+>                             onMouseDown={function}
+>                             onKeyDown={function}
+>                             onKeyUp={function}
+>                             onPointerDown={function}
+>                             tabIndex={0}
+>                             disabled={false}
+>                             data-base-ui-click-trigger=""
+>                             id="base-ui-_R_3t5esnel5rlb_"
+>                             aria-haspopup="dialog"
+>                             aria-expanded={false}
+>                             aria-controls={undefined}
+>                             data-slot="dialog-trigger"
+>                             ref={function}
+>                           >
+                              <Button size="lg">
+                                <Button data-slot="button" className={"group/bu..."}>
+>                                 <button
+>                                   type="button"
+>                                   onClick={function}
+>                                   onMouseDown={function}
+>                                   onKeyDown={function}
+>                                   onKeyUp={function}
+>                                   onPointerDown={function}
+>                                   tabIndex={0}
+>                                   disabled={false}
+>                                   data-slot="button"
+>                                   ref={function}
+>                                   className={"group/button inline-flex shrink-0 items-center justify-center rounded..."}
+>                                 >
+                        ...
+          ...
+        ...
+ @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:1052
+[   84261ms] [ERROR] <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button> @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:1052
+[   84299ms] Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+    at throwOnHydrationMismatch (http://localhost:3000/_next/static/chunks/1cde_next_dist_compiled_react-dom_1elg_d5._.js:3120:56)
+    at beginWork (http://localhost:3000/_next/static/chunks/1cde_next_dist_compiled_react-dom_1elg_d5._.js:6585:918)
+    at runWithFiberInDEV (http://localhost:3000/_next/static/chunks/1cde_next_dist_compiled_react-dom_1elg_d5._.js:761:74)
+    at performUnitOfWork (http://localhost:3000/_next/static/chunks/1cde_next_dist_compiled_react-dom_1elg_d5._.js:9385:97)
+    at workLoopConcurrentByScheduler (http://localhost:3000/_next/static/chunks/1cde_next_dist_compiled_react-dom_1elg_d5._.js:9381:58)
+    at renderRootConcurrent (http://localhost:3000/_next/static/chunks/1cde_next_dist_compiled_react-dom_1elg_d5._.js:9364:71)
+    at performWorkOnRoot (http://localhost:3000/_next/static/chunks/1cde_next_dist_compiled_react-dom_1elg_d5._.js:8891:150)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3000/_next/static/chunks/1cde_next_dist_compiled_react-dom_1elg_d5._.js:10085:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3000/_next/static/chunks/1cde_next_dist_compiled_009kwl0._.js:2647:64)
+[  100158ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:776
+[  100264ms] [LOG] [Fast Refresh] done in 61ms @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:776
+[  104195ms] [LOG] [Fast Refresh] done in 61ms @ http://localhost:3000/_next/static/chunks/1cde_next_dist_0s-zltk._.js:776

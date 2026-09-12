@@ -1,0 +1,67 @@
+- generic [ref=f4e1]:
+  - generic [aria-hidden] [ref=f4e2]:
+    - generic [ref=f4e172]:
+      - generic [ref=f4e173]: rodeoArena
+      - generic [ref=f4e177]:
+        - link [ref=f4e178] [cursor=pointer]:
+          - /url: /dashboard
+          - generic [ref=f4e179]: Dashboard
+        - link [ref=f4e180] [cursor=pointer]:
+          - /url: /dashboard/rounds
+          - generic [ref=f4e181]: Rounds
+        - link [ref=f4e182] [cursor=pointer]:
+          - /url: /dashboard/simulator
+          - generic [ref=f4e183]: Simulador
+        - link [ref=f4e184] [cursor=pointer]:
+          - /url: /dashboard/competitors
+          - generic [ref=f4e185]: Competidores
+        - link [ref=f4e186] [cursor=pointer]:
+          - /url: /dashboard/animals
+          - generic [ref=f4e187]: Animais
+        - link [ref=f4e188] [cursor=pointer]:
+          - /url: /dashboard/ranking
+          - generic [ref=f4e189]: Ranking
+      - generic [ref=f4e191]:
+        - generic [ref=f4e192]:
+          - generic [ref=f4e193]: U
+          - generic [ref=f4e194]:
+            - heading [level=3] [ref=f4e195]: Usuário Teste
+            - paragraph [ref=f4e196]: Admin
+          - button [ref=f4e197] [cursor=pointer]
+        - button [ref=f4e199] [cursor=pointer]:
+          - generic [ref=f4e201]: Configurações
+    - main [ref=f4e3]:
+      - button [ref=f4e114] [cursor=pointer]:
+        - generic [ref=f4e5]: Toggle Sidebar
+      - main [ref=f4e6]:
+        - generic [ref=f4e7]:
+          - generic [ref=f4e8]:
+            - heading [level=1] [ref=f4e115]: Animais
+            - paragraph [ref=f4e10]: Acompanhamento e estatisticas dos atletas de quatro patas.
+          - button [expanded] [ref=f4e116] [cursor=pointer]: Novo Animal
+  - button "Open Next.js Dev Tools" [ref=f4e18] [cursor=pointer]
+  - alert [ref=f4e22]
+  - generic:
+    - region "Notifications"
+  - dialog [ref=f4e120]:
+    - heading "Adicionar novo Animal" [level=2] [ref=f4e122]
+    - generic [ref=f4e124]:
+      - group [ref=f4e125]:
+        - generic [ref=f4e126]: Nome
+        - textbox "Nome" [ref=f4e127]:
+          - /placeholder: Digite o nome do Animal
+      - group [ref=f4e128]:
+        - combobox [expanded] [ref=f4e129]:
+          - generic [ref=f4e130]: Tipo do Animal
+          - img [aria-hidden]: ▼
+        - listbox [ref=f4e205]:
+          - group [ref=f4e206]:
+            - option "Touro" [active] [ref=f4e207]
+            - option "Boi" [ref=f4e209]
+            - option "Bezerro" [ref=f4e211]
+            - option "Cavalo" [ref=f4e213]
+        - textbox [aria-hidden] [ref=f4e131]
+    - generic [ref=f4e132]:
+      - button "Cancelar" [ref=f4e133] [cursor=pointer]
+      - button "Adicionar novo animal" [ref=f4e134] [cursor=pointer]
+    - button "Close" [ref=f4e135] [cursor=pointer]

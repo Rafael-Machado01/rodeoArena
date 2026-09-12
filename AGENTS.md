@@ -43,3 +43,12 @@ npx prisma migrate dev # aplica/gera migrações
 - **sequential-thinking** — raciocínio passo a passo para problemas complexos.
 
 Prefira usar os MCPs acima (principalmente context7 e playwright) em vez de responder só por conhecimento de treino.
+
+## Componentes prontos primeiro
+
+Antes de sugerir lógica/código manual (timers, estado, hooks etc.) ou reinventar a roda, verifique se já existe um **componente pronto** que resolva o problema:
+
+- Consulte as bibliotecas do projeto (shadcn/ui, Base UI, lucide-react, etc.) e o contexto do stack via context7.
+- Para algo como toast/popup, modal, tooltip, etc., priorize apontar o componente nativo do shadcn/Base UI antes de propor implementação manual.
+- Só proponha código customizado quando não houver solução pronta adequada, e explique por quê.
+- Ao indicar um componente, informe o comando de instalação e o padrão de uso (montar no layout, chamada reutilizável, etc.).
