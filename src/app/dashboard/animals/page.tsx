@@ -11,14 +11,17 @@ export default async function AnimalsPage() {
 
   const animals = await getAnimals();
   return (
-    <main className="m-3 p-2 flex justify-between items-center gap-4">
-      <div>
-        <h1 className="text-text font-bold font-heading text-2xl">Animais</h1>
-        <p className="text-text-muted">
-          Acompanhamento e estatisticas dos atletas de quatro patas.
-        </p>
-      </div>
-      <NewAnimal tipoAnimal={typedAnimals} />
+    <main className="m-3 p-2 w-full">
+      <header className="flex justify-between items-center gap-4">
+        <div className="flex flex-col">
+          <h1 className="text-text font-bold font-heading text-2xl">Animais</h1>
+          <p className="text-text-muted">
+            Acompanhamento e estatisticas dos atletas de quatro patas.
+          </p>
+        </div>
+        <NewAnimal tipoAnimal={typedAnimals} />
+      </header>
+
       <div>
         <DataAnimal animais={animals} tipoAnimal={typedAnimals} />
       </div>

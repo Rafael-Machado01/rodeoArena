@@ -36,6 +36,7 @@ export default async function newAnimal(
   const dataForm = {
     name: formData.get("name") as string,
     tipoAnimalId: formData.get("tipoAnimalId") as string,
+    imageUrl: formData.get("imageUrl") as string,
   };
 
   if (dataForm.name.trim().length < 4) {
@@ -44,10 +45,14 @@ export default async function newAnimal(
       type: "error",
     };
   }
+
   await prisma.animal.create({
     data: {
       nome: dataForm.name.trim(),
       tipoAnimalId: dataForm.tipoAnimalId,
+      ...(dataForm.imageUrl && {
+        imageUrl: dataForm.imageUrl,
+      }),
     },
   });
   revalidatePath("/dashboard/animals");
@@ -81,6 +86,7 @@ export async function editAnimal(
     id: formData.get("id") as string,
     nome: formData.get("nome") as string,
     tipoAnimal: formData.get("tipoAnimal") as string,
+    imageUrl: formData.get("imageUrl") as string,
   };
 
   if (dataForm.nome.trim().length < 4) {
@@ -94,16 +100,20 @@ export async function editAnimal(
     where: { id: dataForm.id },
     include: { tipoAnimal: true },
   });
-
+  const image = dataForm.imageUrl.length > 0;
   const hasChanges =
     dataForm.nome !== original?.nome ||
-    dataForm.tipoAnimal !== original?.tipoAnimalId;
+    dataForm.tipoAnimal !== original?.tipoAnimalId ||
+    image;
   if (!hasChanges) {
     return { message: "Nenhuma alteração foi feita!", type: "error" };
   } else {
     const dataToUpdate = {
       nome: dataForm.nome,
       tipoAnimalId: dataForm.tipoAnimal,
+      ...(image && {
+        imageUrl: dataForm.imageUrl,
+      }),
     };
     await prisma.animal.update({
       where: { id: dataForm.id },

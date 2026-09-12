@@ -6,7 +6,6 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import { Field, FieldGroup } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
@@ -19,6 +18,10 @@ import type TipoAnimalOption from "@/types/TipoAnimal";
 import { editAnimal } from "@/actions/animals";
 import FormState from "@/types/FormState";
 import { toast } from "../../toast";
+import { TailwindData } from "@/constants/TailwindData";
+import { useEdgeStore } from "@/lib/edgestore";
+import { Pencil, Plus } from "lucide-react";
+import Image from "next/image";
 
 type AnimalWithType = Prisma.AnimalGetPayload<{
   include: { tipoAnimal: true };
@@ -52,6 +55,22 @@ export default function EditAnimal({
       });
     }
   });
+  const [newImageUrl, setNewImageUrl] = useState<string | null>(null);
+  const imageSrc = newImageUrl || animal.imageUrl;
+
+  const { edgestore } = useEdgeStore();
+
+  const onUploadFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+
+    if (!file) return;
+
+    const res = await edgestore.publicFiles.upload({
+      file,
+    });
+
+    setNewImageUrl(res.url);
+  };
   return (
     <Dialog open={open} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-sm">
@@ -61,12 +80,51 @@ export default function EditAnimal({
           </DialogHeader>
           <FieldGroup>
             <Field>
+              <Label
+                htmlFor="image"
+                className={`${TailwindData.centered} cursor-pointer`}
+              >
+                <input
+                  type="file"
+                  accept="image/*"
+                  id="image"
+                  name="image"
+                  className="hidden"
+                  onChange={onUploadFile}
+                />
+                <div className="relative">
+                  {imageSrc ? (
+                    <Image
+                      src={imageSrc}
+                      alt="Foto do animal"
+                      width={56}
+                      height={56}
+                      className="h-14 w-14 object-cover rounded-full"
+                    />
+                  ) : (
+                    <p className="text-rodeo-surface">Ola</p>
+                  )}
+                  <span
+                    className={`absolute inset-0 ${TailwindData.centered} rounded-full bg-black/40 text-xs text-text `}
+                  >
+                    <Pencil />
+                  </span>
+                </div>
+              </Label>
+            </Field>
+            <Field>
               <input type="hidden" id="id" name="id" defaultValue={animal.id} />
               <input
                 type="hidden"
                 id="tipoAnimal"
                 name="tipoAnimal"
                 value={select}
+              />
+              <input
+                type="hidden"
+                id="imageUrl"
+                name="imageUrl"
+                value={newImageUrl || ""}
               />
               <Label htmlFor="nome">Nome</Label>
               <Input id="nome" name="nome" defaultValue={animal.nome} />

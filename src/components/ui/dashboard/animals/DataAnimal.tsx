@@ -21,30 +21,25 @@ import DeleteAnimal from "./DeleteAnimal";
 import { useState } from "react";
 import type TipoAnimalOption from "@/types/TipoAnimal";
 import EditAnimal from "./EditAnimal";
+import Image from "next/image";
+import { TailwindData } from "@/constants/TailwindData";
 type AnimalWithTipo = Prisma.AnimalGetPayload<{
   include: { tipoAnimal: true };
 }>;
 
 interface DataAnimalProps {
-  animais: AnimalWithTipo;
+  animais: AnimalWithTipo[];
   tipoAnimal: TipoAnimalOption[];
 }
 
 export function DataAnimal({ animais, tipoAnimal }: DataAnimalProps) {
-  const [toggleDelete, setToggleDelete] = useState(false);
-  const [toggleEdit, setToggleEdit] = useState(false);
-
-  const handleClickCloseDelete = () => {
-    setToggleDelete(!toggleDelete);
-  };
-
-  const handleClickCloseEdit = () => {
-    setToggleEdit(!toggleEdit);
-  };
+  const [deleteTarget, setDeleteTarget] = useState<string | null>(null);
+  const [editTarget, setEditTarget] = useState<string | null>(null);
   return (
     <Table>
       <TableHeader>
         <TableRow>
+          <TableHead>Imagem</TableHead>
           <TableHead>Nome</TableHead>
           <TableHead>Tipo Animal</TableHead>
           <TableHead className="text-right">Ações</TableHead>
@@ -53,6 +48,21 @@ export function DataAnimal({ animais, tipoAnimal }: DataAnimalProps) {
       <TableBody>
         {animais.map((animal) => (
           <TableRow key={animal.id}>
+            <TableCell className={TailwindData.centered}>
+              {animal.imageUrl ? (
+                <Image
+                  src={animal.imageUrl}
+                  width={36}
+                  height={36}
+                  className="w-9 h-9 rounded-full"
+                  alt={`Foto do animal: ${animal.nome}`}
+                />
+              ) : (
+                <p className="rounded-full bg-black/30 px-2 text-lg text-text-muted">
+                  {animal.nome.slice(0, 1).toUpperCase()}
+                </p>
+              )}
+            </TableCell>
             <TableCell className="font-medium">{animal.nome}</TableCell>
             <TableCell>{animal.tipoAnimal.descricao}</TableCell>
             <TableCell className="text-right">
@@ -66,27 +76,27 @@ export function DataAnimal({ animais, tipoAnimal }: DataAnimalProps) {
                   }
                 />
                 <DropdownMenuContent align="end">
-                  <DropdownMenuItem onClick={() => setToggleEdit(true)}>
+                  <DropdownMenuItem onClick={() => setEditTarget(animal.id)}>
                     Editar
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem
                     variant="destructive"
-                    onClick={() => setToggleDelete(true)}
+                    onClick={() => setDeleteTarget(animal.id)}
                   >
                     Deletar
                   </DropdownMenuItem>
                 </DropdownMenuContent>
                 <DeleteAnimal
                   id={animal.id}
-                  open={toggleDelete}
-                  onClose={handleClickCloseDelete}
+                  open={deleteTarget === animal.id}
+                  onClose={() => setDeleteTarget(null)}
                 />
                 <EditAnimal
                   animal={animal}
                   items={tipoAnimal}
-                  open={toggleEdit}
-                  onClose={handleClickCloseEdit}
+                  open={editTarget === animal.id}
+                  onClose={() => setEditTarget(null)}
                 />
               </DropdownMenu>
             </TableCell>

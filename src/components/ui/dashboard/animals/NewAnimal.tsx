@@ -19,6 +19,9 @@ import SelectTipoAnimal from "./SelectTipoAnimal";
 import type TipoAnimalOption from "@/types/TipoAnimal";
 import { useActionState, useEffect, useState } from "react";
 import { toast } from "../../toast";
+import { useEdgeStore } from "@/lib/edgestore";
+import { TailwindData } from "@/constants/TailwindData";
+import Image from "next/image";
 
 interface NewAnimalProps {
   tipoAnimal: TipoAnimalOption[];
@@ -41,6 +44,19 @@ export default function NewAnimal({ tipoAnimal }: NewAnimalProps) {
   });
 
   const [selected, setSelected] = useState("");
+  const [newImage, setNewImage] = useState<null | string>(null);
+  const { edgestore } = useEdgeStore();
+
+  const onUploadFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const res = await edgestore.publicFiles.upload({
+      file,
+    });
+
+    setNewImage(res.url);
+  };
   return (
     <Dialog>
       <DialogTrigger
@@ -65,6 +81,40 @@ export default function NewAnimal({ tipoAnimal }: NewAnimalProps) {
               name="tipoAnimalId"
               value={selected}
             />
+            <input
+              type="hidden"
+              id="imageUrl"
+              name="imageUrl"
+              value={newImage || ""}
+            />
+            <Field>
+              <Label
+                htmlFor="image"
+                className={` ${TailwindData.centered} cursor-pointer`}
+              >
+                <input
+                  type="file"
+                  accept="image/*"
+                  name="image"
+                  id="image"
+                  className="hidden"
+                  onChange={onUploadFile}
+                />
+
+                <div className="relative">
+                  {newImage && (
+                    <Image
+                      src={newImage}
+                      alt="Foto do Animal"
+                      width={56}
+                      height={56}
+                      className="h-14 w-14 object-cover rounded-full"
+                    />
+                  )}
+                  <Plus className="bg-black/30 rounded-full" />
+                </div>
+              </Label>
+            </Field>
             <Field>
               <Label htmlFor="name">Nome</Label>
               <Input
