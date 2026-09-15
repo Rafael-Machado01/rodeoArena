@@ -1,4 +1,10 @@
+import { Pencil } from "lucide-react";
+import Image from "next/image";
+import { useActionState, useEffect,useState } from "react";
+
+import { editAnimal } from "@/actions/animals";
 import { Button } from "@/components/ui/button";
+import SelectTipoAnimal from "@/components/ui/dashboard/animals/SelectTipoAnimal";
 import {
   Dialog,
   DialogClose,
@@ -10,18 +16,12 @@ import {
 import { Field, FieldGroup } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-
-import type { Prisma } from "@/generated/prisma/browser";
-import SelectTipoAnimal from "./SelectTipoAnimal";
-import { useActionState, useState, useEffect } from "react";
-import type TipoAnimalOption from "@/types/TipoAnimal";
-import { editAnimal } from "@/actions/animals";
-import FormState from "@/types/FormState";
-import { toast } from "../../toast";
+import { toast } from "@/components/ui/toast";
 import { TailwindData } from "@/constants/TailwindData";
+import type { Prisma } from "@/generated/prisma/browser";
 import { useEdgeStore } from "@/lib/edgestore";
-import { Pencil, Plus } from "lucide-react";
-import Image from "next/image";
+import FormState from "@/types/FormState";
+import type TipoAnimalOption from "@/types/TipoAnimal";
 
 type AnimalWithType = Prisma.AnimalGetPayload<{
   include: { tipoAnimal: true };

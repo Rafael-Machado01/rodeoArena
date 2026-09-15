@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { MonitorCog, Trophy, Calculator } from "lucide-react";
+import { Calculator,MonitorCog, Trophy } from "lucide-react";
 interface WhatsCardsContentType {
   id: number;
   icon: LucideIcon;

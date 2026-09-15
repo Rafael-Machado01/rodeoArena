@@ -1,6 +1,11 @@
 "use client";
 import { MoreHorizontalIcon } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
+
+import { deleteAnimal } from "@/actions/animals";
 import { Button } from "@/components/ui/button";
+import EditAnimal from "@/components/ui/dashboard/animals/EditAnimal";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,13 +21,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import type { Prisma } from "@/generated/prisma";
-import DeleteAnimal from "./DeleteAnimal";
-import { useState } from "react";
-import type TipoAnimalOption from "@/types/TipoAnimal";
-import EditAnimal from "./EditAnimal";
-import Image from "next/image";
 import { TailwindData } from "@/constants/TailwindData";
+import type { Prisma } from "@/generated/prisma/browser";
+import type TipoAnimalOption from "@/types/TipoAnimal";
+
+import DeleteCard from "../../crud/DeleteCard";
 type AnimalWithTipo = Prisma.AnimalGetPayload<{
   include: { tipoAnimal: true };
 }>;
@@ -87,10 +90,12 @@ export function DataAnimal({ animais, tipoAnimal }: DataAnimalProps) {
                     Deletar
                   </DropdownMenuItem>
                 </DropdownMenuContent>
-                <DeleteAnimal
+                <DeleteCard
                   id={animal.id}
                   open={deleteTarget === animal.id}
                   onClose={() => setDeleteTarget(null)}
+                  table="Animal"
+                  action={() => deleteAnimal(animal.id)}
                 />
                 <EditAnimal
                   animal={animal}

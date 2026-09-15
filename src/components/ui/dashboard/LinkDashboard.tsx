@@ -1,10 +1,11 @@
 "use client";
-import { buttonVariants } from "../button";
-import { TailwindData } from "@/constants/TailwindData";
-import { cn } from "@/lib/utils";
 import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
+import { buttonVariants } from "@/components/ui/button";
+import { TailwindData } from "@/constants/TailwindData";
+import { cn } from "@/lib/utils";
 
 interface LinkDashboardProps {
   text: string;

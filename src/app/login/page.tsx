@@ -1,9 +1,10 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { TailwindData } from "@/constants/TailwindData";
-import Logo from "@/components/ui/home/Logo";
-import { signIn } from "@/lib/auth";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
+
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import Logo from "@/components/ui/home/Logo";
+import { TailwindData } from "@/constants/TailwindData";
+import { signIn } from "@/lib/auth";
 
 export default function Login() {
   return (

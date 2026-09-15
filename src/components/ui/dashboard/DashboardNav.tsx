@@ -1,7 +1,7 @@
 "use client";
 
-import { DashboardLinks } from "@/constants/Dashboard-Links";
 import LinkDashboard from "@/components/ui/dashboard/LinkDashboard";
+import { DashboardLinks } from "@/constants/Dashboard-Links";
 
 export default function DashboardNav() {
   return (

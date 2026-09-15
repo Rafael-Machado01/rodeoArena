@@ -1,16 +1,14 @@
+import CardUser from "@/components/ui/dashboard/CardUser";
+import DashboardNav from "@/components/ui/dashboard/DashboardNav";
+import Logo from "@/components/ui/home/Logo";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
 } from "@/components/ui/sidebar";
-
-import Logo from "@/components/ui/home/Logo";
 import { TailwindData } from "@/constants/TailwindData";
-
-import type { User as userType } from "@/types/User";
-import CardUser from "@/components/ui/dashboard/CardUser";
-import DashboardNav from "@/components/ui/dashboard/DashboardNav";
+import type { User as userType } from "@/generated/prisma/browser";
 
 interface AppSideBarProps {
   user: userType | null;
