@@ -1,5 +1,6 @@
 import { initEdgeStore } from "@edgestore/server";
 import { createEdgeStoreNextHandler } from "@edgestore/server/adapters/next/app";
+
 import { auth } from "@/lib/auth";
 
 type Context = {

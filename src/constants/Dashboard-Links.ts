@@ -1,11 +1,11 @@
 import {
   LayoutDashboard,
   ListOrdered,
+  type LucideIcon,
+  Medal,
+  PawPrint,
   Target,
   UserGroup,
-  type LucideIcon,
-  PawPrint,
-  Medal,
 } from "lucide-react";
 
 interface DashboardLinksProps {

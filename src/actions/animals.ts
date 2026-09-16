@@ -1,8 +1,9 @@
 "use server";
+import { revalidatePath } from "next/cache";
+
 import { prisma } from "@/lib/prisma";
 import getCurrentUser from "@/lib/user";
 import type FormState from "@/types/FormState";
-import { revalidatePath } from "next/cache";
 
 export async function getAnimals() {
   const loggedUser = await getCurrentUser();

@@ -1,8 +1,11 @@
-import type { Metadata } from "next";
 import "./globals.css";
-import { cn } from "@/lib/utils";
-import { inter, playfair } from "./fonts";
+
+import type { Metadata } from "next";
+
 import { EdgeStoreProvider } from "@/lib/edgestore";
+import { cn } from "@/lib/utils";
+
+import { inter, playfair } from "./fonts";
 
 export const metadata: Metadata = {
   title: "rodeoArena",

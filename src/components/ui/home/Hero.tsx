@@ -1,6 +1,7 @@
+import Link from "next/link";
+
 import { Button } from "@/components/ui/button";
 import { TailwindData } from "@/constants/TailwindData";
-import Link from "next/link";
 
 export default function Hero() {
   return (

@@ -1,7 +1,8 @@
+import Link from "next/link";
+
 import Logo from "@/components/ui/home/Logo";
 import { NavbarLinks } from "@/constants/Navbar-Links";
 import { TailwindData } from "@/constants/TailwindData";
-import Link from "next/link";
 
 export default function Footer() {
   return (

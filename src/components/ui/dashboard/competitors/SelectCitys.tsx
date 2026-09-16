@@ -6,21 +6,21 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import type TipoAnimalOption from "@/types/SelectOptionType";
+import type { CidadeOption } from "@/types/Cidade";
 
-interface SelectTipoAnimalProps {
-  items: TipoAnimalOption[];
+interface SelectCitysProps {
+  items: CidadeOption[];
   value: string;
   onChanged: (value: string | null) => void;
 }
-export default function SelectTipoAnimal({
+export default function SelectCitys({
   items,
   value,
   onChanged,
-}: SelectTipoAnimalProps) {
+}: SelectCitysProps) {
   return (
     <Select
-      name="tipoAnimalId"
+      name="cidadeId"
       value={value}
       onValueChange={onChanged}
       itemToStringLabel={(itemValue) =>
@@ -29,7 +29,7 @@ export default function SelectTipoAnimal({
       }
     >
       <SelectTrigger className="w-45">
-        <SelectValue placeholder="Tipo do Animal" />
+        <SelectValue placeholder="Cidade" />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>

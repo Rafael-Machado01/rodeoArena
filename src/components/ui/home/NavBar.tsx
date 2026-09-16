@@ -1,8 +1,9 @@
-import Logo from "@/components/ui/home/Logo";
-import { TailwindData } from "@/constants/TailwindData";
-import { NavbarLinks } from "@/constants/Navbar-Links";
 import Link from "next/link";
-import { Button } from "../button";
+
+import { Button } from "@/components/ui/button";
+import Logo from "@/components/ui/home/Logo";
+import { NavbarLinks } from "@/constants/Navbar-Links";
+import { TailwindData } from "@/constants/TailwindData";
 export default function Navbar() {
   return (
     <header className="sticky bg-rodeo-bg h-10 top-0 z-50 shadow-lg border-b border-rodeo-bronze/50">

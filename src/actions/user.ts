@@ -1,9 +1,10 @@
 "use server";
 
-import type FormState from "@/types/FormState";
+import { revalidatePath } from "next/cache";
+
 import { prisma } from "@/lib/prisma";
 import getCurrentUser from "@/lib/user";
-import { revalidatePath } from "next/cache";
+import type FormState from "@/types/FormState";
 
 export default async function updateUser(
   formState: FormState,

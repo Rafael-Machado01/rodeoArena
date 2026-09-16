@@ -1,6 +1,6 @@
-import NewAnimal from "@/components/ui/dashboard/animals/NewAnimal";
-import { getTiposAnimals, getAnimals } from "@/actions/animals";
+import { getAnimals, getTiposAnimals } from "@/actions/animals";
 import { DataAnimal } from "@/components/ui/dashboard/animals/DataAnimal";
+import NewAnimal from "@/components/ui/dashboard/animals/NewAnimal";
 
 export default async function AnimalsPage() {
   const tipoAnimals = await getTiposAnimals();
@@ -19,7 +19,7 @@ export default async function AnimalsPage() {
             Acompanhamento e estatisticas dos atletas de quatro patas.
           </p>
         </div>
-        <NewAnimal tipoAnimal={typedAnimals} />
+        <NewAnimal tiposAnimal={typedAnimals} />
       </header>
 
       <div>

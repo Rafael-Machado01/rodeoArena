@@ -1,4 +1,9 @@
 "use client";
+import { Pencil } from "lucide-react";
+import Image from "next/image";
+import { useActionState, useEffect,useState } from "react";
+
+import updateUser from "@/actions/user";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -12,15 +17,11 @@ import {
 import { Field, FieldGroup } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import type { User as UserType } from "@/types/User";
-import Image from "next/image";
-import { TailwindData } from "@/constants/TailwindData";
-import { useActionState, useState, useEffect } from "react";
-import FormState from "@/types/FormState";
-import updateUser from "@/actions/user";
-import { Pencil } from "lucide-react";
-import { useEdgeStore } from "@/lib/edgestore";
 import { toast } from "@/components/ui/toast";
+import { TailwindData } from "@/constants/TailwindData";
+import type { User as UserType } from "@/generated/prisma/browser";
+import { useEdgeStore } from "@/lib/edgestore";
+import FormState from "@/types/FormState";
 
 interface EditarPerfiProps {
   user: UserType;

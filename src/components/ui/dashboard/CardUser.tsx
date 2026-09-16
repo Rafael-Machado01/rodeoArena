@@ -1,7 +1,8 @@
-import { signOut } from "@/lib/auth";
-import type { User as UserType } from "@/types/User";
 import Image from "next/image";
+
 import { TailwindData } from "@/constants/TailwindData";
+import type { User as UserType } from "@/generated/prisma/browser";
+import { signOut } from "@/lib/auth";
 interface CardUserProps {
   user: UserType;
 }
