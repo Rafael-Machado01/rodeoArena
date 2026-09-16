@@ -1,13 +1,12 @@
 import getAllCidades from "@/actions/citys";
 import { getAllCompetitors } from "@/actions/Competitor";
 import DataCompetitor from "@/components/ui/dashboard/competitors/DataCompetitor";
-import NewCity from "@/components/ui/dashboard/competitors/NewCity";
 import NewCompetitor from "@/components/ui/dashboard/competitors/NewCompetitor";
 
 export default async function Competitors() {
   const citys = await getAllCidades();
   const citysTyped = citys.map((c) => ({
-    label: c.descricao + " " + c.estado,
+    label: c.descricao + " " + c.estado?.descricao,
     value: c.id,
   }));
   const competitors = await getAllCompetitors();
@@ -23,11 +22,14 @@ export default async function Competitors() {
           </p>
         </div>
         <NewCompetitor citys={citysTyped} />
-        <NewCity />
       </header>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {competitors.map((competitor) => (
-          <DataCompetitor key={competitor.id} competitors={competitor} />
+          <DataCompetitor
+            key={competitor.id}
+            competitors={competitor}
+            citys={citysTyped}
+          />
         ))}
       </div>
     </main>

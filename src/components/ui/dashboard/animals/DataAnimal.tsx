@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/table";
 import { TailwindData } from "@/constants/TailwindData";
 import type { Prisma } from "@/generated/prisma/browser";
-import type TipoAnimalOption from "@/types/TipoAnimal";
+import SelectOptionType from "@/types/SelectOptionType";
 
 import DeleteCard from "../../crud/DeleteCard";
 type AnimalWithTipo = Prisma.AnimalGetPayload<{
@@ -32,7 +32,7 @@ type AnimalWithTipo = Prisma.AnimalGetPayload<{
 
 interface DataAnimalProps {
   animais: AnimalWithTipo[];
-  tipoAnimal: TipoAnimalOption[];
+  tipoAnimal: SelectOptionType[];
 }
 
 export function DataAnimal({ animais, tipoAnimal }: DataAnimalProps) {
@@ -90,20 +90,20 @@ export function DataAnimal({ animais, tipoAnimal }: DataAnimalProps) {
                     Deletar
                   </DropdownMenuItem>
                 </DropdownMenuContent>
-                <DeleteCard
-                  id={animal.id}
-                  open={deleteTarget === animal.id}
-                  onClose={() => setDeleteTarget(null)}
-                  table="Animal"
-                  action={() => deleteAnimal(animal.id)}
-                />
-                <EditAnimal
-                  animal={animal}
-                  items={tipoAnimal}
-                  open={editTarget === animal.id}
-                  onClose={() => setEditTarget(null)}
-                />
               </DropdownMenu>
+              <DeleteCard
+                id={animal.id}
+                open={deleteTarget === animal.id}
+                onClose={() => setDeleteTarget(null)}
+                table="Animal"
+                action={() => deleteAnimal(animal.id)}
+              />
+              <EditAnimal
+                open={editTarget === animal.id}
+                onClose={() => setEditTarget(null)}
+                animal={animal}
+                tipos={tipoAnimal}
+              />
             </TableCell>
           </TableRow>
         ))}

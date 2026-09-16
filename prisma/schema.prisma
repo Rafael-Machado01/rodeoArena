@@ -48,8 +48,15 @@ model Competidor {
 model Cidade {
   id           String       @id @default(cuid())
   descricao    String
-  estado       String
+  estadoId     String?
+  estado       Estado?      @relation(fields: [estadoId], references: [id])
   competidores Competidor[]
+}
+
+model Estado {
+  id        String   @id @default(cuid())
+  descricao String
+  cidades   Cidade[]
 }
 
 model User {

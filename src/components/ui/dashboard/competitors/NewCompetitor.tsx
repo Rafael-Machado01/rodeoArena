@@ -4,7 +4,7 @@ import { useState } from "react";
 import { newCompetitor } from "@/actions/Competitor";
 import SelectOptionType from "@/types/SelectOptionType";
 
-import NewCard from "../../crud/NewCard";
+import FormCard from "../../crud/FormCard";
 import SelectOptions from "../../crud/SelectOptions";
 import UploadImage from "../../crud/UploadImage";
 import { FieldGroup } from "../../field";
@@ -18,12 +18,12 @@ export default function NewCompetitor({ citys }: NewCompetitorProps) {
   const [selected, setSelected] = useState("");
   const [newImage, setNewImage] = useState("");
   return (
-    <NewCard action={newCompetitor} table="Competidor">
+    <FormCard action={newCompetitor} table="Adicionar Competidor">
       <FieldGroup>
         <Field>
           <input type="hidden" id="imageUrl" name="imageUrl" value={newImage} />
           <input type="hidden" id="cidadeId" name="cidadeId" value={selected} />
-          <UploadImage onImageChange={(url) => setNewImage(url)} />
+          <UploadImage onImageChange={(url) => setNewImage(url ?? "")} />
         </Field>
         <Field>
           <Label htmlFor="name">Nome</Label>
@@ -54,11 +54,11 @@ export default function NewCompetitor({ citys }: NewCompetitorProps) {
           <SelectOptions
             items={citys}
             value={selected}
-            onChanged={(value) => setSelected(value)}
+            onChanged={(value) => setSelected(value ?? "")}
             placeholder="Selecione a cidade"
           />
         </Field>
       </FieldGroup>
-    </NewCard>
+    </FormCard>
   );
 }

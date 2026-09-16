@@ -85,8 +85,8 @@ export async function editAnimal(
   }
   const dataForm = {
     id: formData.get("id") as string,
-    nome: formData.get("nome") as string,
-    tipoAnimal: formData.get("tipoAnimal") as string,
+    nome: formData.get("name") as string,
+    tipoAnimal: formData.get("tipoAnimalId") as string,
     imageUrl: formData.get("imageUrl") as string,
   };
 

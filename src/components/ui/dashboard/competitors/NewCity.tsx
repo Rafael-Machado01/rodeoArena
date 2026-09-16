@@ -1,15 +1,26 @@
-import { newCity } from "@/actions/citys";
+"use client";
+import { useState } from "react";
 
-import NewCard from "../../crud/NewCard";
+import { newCity } from "@/actions/citys";
+import type SelectOptionType from "@/types/SelectOptionType";
+
+import FormCard from "../../crud/FormCard";
+import SelectOptions from "../../crud/SelectOptions";
 import { Field, FieldGroup } from "../../field";
 import { Input } from "../../input";
 import { Label } from "../../label";
 
-export default function NewCity() {
+interface NewCityProps {
+  ufs: SelectOptionType[];
+}
+
+export default function NewCity({ ufs }: NewCityProps) {
+  const [selected, setSelected] = useState("");
   return (
-    <NewCard table="Cidade" action={newCity}>
+    <FormCard table="Adicionar Cidade" action={newCity}>
       <FieldGroup>
         <Field>
+          <input name="ufId" id="ufId" type="hidden" value={selected} />
           <Label htmlFor="descricao">Nome</Label>
           <Input
             placeholder="Digite o nome da cidade"
@@ -19,9 +30,14 @@ export default function NewCity() {
         </Field>
         <Field>
           <Label htmlFor="uf">UF</Label>
-          <Input placeholder="Digite a UF do estado" name="uf" id="uf" />
+          <SelectOptions
+            items={ufs}
+            value={selected}
+            onChanged={(value) => setSelected(value ?? "")}
+            placeholder="Selecione a UF da cidade"
+          />
         </Field>
       </FieldGroup>
-    </NewCard>
+    </FormCard>
   );
 }

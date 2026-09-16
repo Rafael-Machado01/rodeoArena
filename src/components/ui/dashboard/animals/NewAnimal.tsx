@@ -4,7 +4,7 @@ import { useState } from "react";
 import newAnimal from "@/actions/animals";
 import type SelectOptionType from "@/types/SelectOptionType";
 
-import NewCard from "../../crud/NewCard";
+import FormCard from "../../crud/FormCard";
 import SelectOptions from "../../crud/SelectOptions";
 import UploadImage from "../../crud/UploadImage";
 import { Field, FieldGroup } from "../../field";
@@ -19,9 +19,9 @@ export default function NewAnimal({ tiposAnimal }: NewAnimalProps) {
   const [selected, setSelected] = useState("");
   const [newImage, setNewImage] = useState("");
   return (
-    <NewCard action={newAnimal} table="Animal">
+    <FormCard action={newAnimal} table="Adicionar Animal">
       <FieldGroup>
-        <UploadImage onImageChange={(url) => setNewImage(url)} />
+        <UploadImage onImageChange={(url) => setNewImage(url ?? "")} />
         <input type="hidden" value={newImage} id="imageUrl" name="imageUrl" />
         <input
           type="hidden"
@@ -43,6 +43,6 @@ export default function NewAnimal({ tiposAnimal }: NewAnimalProps) {
           />
         </Field>
       </FieldGroup>
-    </NewCard>
+    </FormCard>
   );
 }

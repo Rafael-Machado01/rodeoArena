@@ -15,13 +15,23 @@ import type FormState from "@/types/FormState";
 
 import { Button } from "../button";
 import { toast } from "../toast";
-interface NewCardProps {
+interface FormCardProps {
   action: (prevState: FormState, formData: FormData) => Promise<FormState>;
   children: React.ReactNode;
   table: string;
+  edit?: boolean;
+  open?: boolean;
+  onClose?: () => void;
 }
 
-export default function NewCard({ action, table, children }: NewCardProps) {
+export default function FormCard({
+  action,
+  table,
+  children,
+  edit = false,
+  open,
+  onClose,
+}: FormCardProps) {
   const [formState, formAction] = useActionState(action, {
     message: "",
     type: "success",
@@ -38,26 +48,31 @@ export default function NewCard({ action, table, children }: NewCardProps) {
   }, [formState]);
 
   return (
-    <Dialog>
-      <DialogTrigger
-        render={
-          <Button size="lg">
-            <span>
-              <Plus />
-            </span>{" "}
-            Adicionar {table}
-          </Button>
-        }
-      />
+    <Dialog {...(edit ? { open, onOpenChange: onClose } : {})}>
+      {edit ? (
+        <></>
+      ) : (
+        <DialogTrigger
+          render={
+            <Button size="lg">
+              <span>
+                <Plus />
+              </span>{" "}
+              {table}
+            </Button>
+          }
+        />
+      )}
+
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Adicionar {table}</DialogTitle>
+          <DialogTitle>{table}</DialogTitle>
         </DialogHeader>
         <form action={formAction}>
           {children}
           <DialogFooter className="mt-4">
             <DialogClose render={<Button variant="outline">Cancelar</Button>} />
-            <Button type="submit">Adicionar {table}</Button>
+            <Button type="submit">{table}</Button>
           </DialogFooter>
         </form>
       </DialogContent>
