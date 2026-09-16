@@ -4,6 +4,8 @@ import { useState } from "react";
 
 import { deleteCompetitor } from "@/actions/Competitor";
 import { Button } from "@/components/ui/button";
+import DeleteCard from "@/components/ui/crud/DeleteCard";
+import EditCompetitors from "@/components/ui/dashboard/competitors/EditComptetitors";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,9 +15,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import type { Prisma } from "@/generated/prisma/client";
 import SelectOptionType from "@/types/SelectOptionType";
-
-import DeleteCard from "../../crud/DeleteCard";
-import EditCompetitors from "./EditComptetitors";
 
 type CompetitorsWithRounds = Prisma.CompetidorGetPayload<{
   include: {

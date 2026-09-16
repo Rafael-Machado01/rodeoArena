@@ -2,6 +2,7 @@
 import { Plus } from "lucide-react";
 import { useActionState, useEffect } from "react";
 
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogClose,
@@ -11,10 +12,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { toast } from "@/components/ui/toast";
 import type FormState from "@/types/FormState";
-
-import { Button } from "../button";
-import { toast } from "../toast";
 interface FormCardProps {
   action: (prevState: FormState, formData: FormData) => Promise<FormState>;
   children: React.ReactNode;

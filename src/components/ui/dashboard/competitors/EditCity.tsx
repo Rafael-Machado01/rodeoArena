@@ -2,14 +2,12 @@
 import { useState } from "react";
 
 import { editCitys } from "@/actions/citys";
+import FormCard from "@/components/ui/crud/FormCard";
+import SelectOptions from "@/components/ui/crud/SelectOptions";
+import { Field, FieldGroup } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import type { Prisma } from "@/generated/prisma/browser";
-
-import FormCard from "../../crud/FormCard";
-import SelectOptions from "../../crud/SelectOptions";
-import { FieldGroup } from "../../field";
-import { Field } from "../../field";
-import { Input } from "../../input";
-import { Label } from "../../label";
 
 type CityWithEstado = Prisma.CidadeGetPayload<{
   include: { estado: true };

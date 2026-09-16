@@ -2,11 +2,10 @@ import { Plus } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
+import { Field } from "@/components/ui/field";
+import { Label } from "@/components/ui/label";
 import { TailwindData } from "@/constants/TailwindData";
 import { useEdgeStore } from "@/lib/edgestore";
-
-import { Field } from "../field";
-import { Label } from "../label";
 
 interface UploadImageProps {
   onImageChange: (url: string | null) => void;

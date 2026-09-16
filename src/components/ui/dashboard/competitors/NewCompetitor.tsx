@@ -2,15 +2,13 @@
 import { useState } from "react";
 
 import { newCompetitor } from "@/actions/Competitor";
+import FormCard from "@/components/ui/crud/FormCard";
+import SelectOptions from "@/components/ui/crud/SelectOptions";
+import UploadImage from "@/components/ui/crud/UploadImage";
+import { Field, FieldGroup } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import SelectOptionType from "@/types/SelectOptionType";
-
-import FormCard from "../../crud/FormCard";
-import SelectOptions from "../../crud/SelectOptions";
-import UploadImage from "../../crud/UploadImage";
-import { FieldGroup } from "../../field";
-import { Field } from "../../field";
-import { Input } from "../../input";
-import { Label } from "../../label";
 interface NewCompetitorProps {
   citys: SelectOptionType[];
 }

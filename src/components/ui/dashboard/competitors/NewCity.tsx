@@ -2,13 +2,12 @@
 import { useState } from "react";
 
 import { newCity } from "@/actions/citys";
+import FormCard from "@/components/ui/crud/FormCard";
+import SelectOptions from "@/components/ui/crud/SelectOptions";
+import { Field, FieldGroup } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import type SelectOptionType from "@/types/SelectOptionType";
-
-import FormCard from "../../crud/FormCard";
-import SelectOptions from "../../crud/SelectOptions";
-import { Field, FieldGroup } from "../../field";
-import { Input } from "../../input";
-import { Label } from "../../label";
 
 interface NewCityProps {
   ufs: SelectOptionType[];

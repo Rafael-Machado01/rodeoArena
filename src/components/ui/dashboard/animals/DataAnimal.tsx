@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import { deleteAnimal } from "@/actions/animals";
 import { Button } from "@/components/ui/button";
+import DeleteCard from "@/components/ui/crud/DeleteCard";
 import EditAnimal from "@/components/ui/dashboard/animals/EditAnimal";
 import {
   DropdownMenu,
@@ -24,8 +25,6 @@ import {
 import { TailwindData } from "@/constants/TailwindData";
 import type { Prisma } from "@/generated/prisma/browser";
 import SelectOptionType from "@/types/SelectOptionType";
-
-import DeleteCard from "../../crud/DeleteCard";
 type AnimalWithTipo = Prisma.AnimalGetPayload<{
   include: { tipoAnimal: true };
 }>;
