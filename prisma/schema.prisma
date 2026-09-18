@@ -28,10 +28,10 @@ model Round {
   competidor     Competidor @relation(fields: [competidorId], references: [id])
   animalId       String
   animal         Animal     @relation(fields: [animalId], references: [id])
-  data           DateTime
-  notaAnimal     Float
-  notaCompetidor Float
-  penalidade     Float
+  data           String
+  notaAnimal     String
+  notaCompetidor String
+  penalidade     String
 }
 
 model Competidor {

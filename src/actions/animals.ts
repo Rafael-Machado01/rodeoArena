@@ -124,3 +124,14 @@ export async function editAnimal(
   revalidatePath("/dashboard/animals");
   return { message: "Animal editado com sucesso!", type: "success" };
 }
+
+export async function getAllAnimals() {
+  const loggedUser = await getCurrentUser();
+  if (!loggedUser) {
+    return null;
+  }
+  const animals = await prisma.animal.findMany({
+    include: { tipoAnimal: true },
+  });
+  return animals;
+}

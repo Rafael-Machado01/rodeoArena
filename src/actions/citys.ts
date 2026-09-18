@@ -106,3 +106,14 @@ export async function editCitys(
   }
   return { message: "Cidade editada com sucesso!", type: "success" };
 }
+
+export async function deleteCity(id: string) {
+  const loggedUser = await getCurrentUser();
+  if (!loggedUser) {
+    return null;
+  }
+  await prisma.cidade.delete({
+    where: { id: id },
+  });
+  revalidatePath("/dashboard/citys");
+}
