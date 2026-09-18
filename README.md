@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🐂 rodeoArena
 
-## Getting Started
+Plataforma de gerenciamento e cronometragem oficial de rodeios profissionais: cadastro de competidores, animais e cidades, simulação de rounds com notas e ranking de desempenho.
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+| Camada    | Tecnologia |
+|-----------|------------|
+| Framework | [Next.js 16](https://nextjs.org) (App Router, React 19, Turbopack) |
+| UI        | [Tailwind CSS v4](https://tailwindcss.com), [shadcn/ui](https://ui.shadcn.com), [Base UI](https://base-ui.com) |
+| ORM       | [Prisma 7](https://www.prisma.io) + PostgreSQL ([Supabase](https://supabase.com)) |
+| Auth      | [Auth.js v5](https://authjs.dev) (beta) — GitHub e Google OAuth |
+| Upload    | [EdgeStore](https://edgestore.dev) |
+| Ícones    | [lucide-react](https://lucide.dev) |
+| Validação | [Zod](https://zod.dev) |
+| Pkg       | [pnpm](https://pnpm.io) |
+
+## Estrutura
+
+```
+src/
+├── app/
+│   ├── api/auth/[...nextauth]/     # rota do Auth.js
+│   ├── api/edgestore/[...edgestore]# uploads (EdgeStore)
+│   ├── dashboard/                  # área autenticada (CRUDs)
+│   └── page.tsx                    # home institucional
+├── components/                     # componentes de UI
+├── constants/                      # dados estáticos (conteúdo da home)
+├── lib/                            # auth, prisma, utils
+├── actions/                        # server actions (round, competitors, ...)
+├── types/                          # FormState e tipos compartilhados
+└── generated/prisma/               # client gerado (não versionado)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Requisitos
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Node.js 20+.
+- Banco PostgreSQL (local ou Supabase).
+- Credenciais OAuth (GitHub/Google) e EdgeStore.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Setup
 
-## Learn More
+Instale as dependências:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Configure o ambiente — copie o conteúdo de variáveis descritas abaixo para um arquivo `.env` na raiz:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+DATABASE_URL="postgresql://USER:PASS@HOST:6543/db?pgbouncer=true"
+DIRECT_URL="postgresql://USER:PASS@HOST:5432/db"
 
-## Deploy on Vercel
+AUTH_SECRET="..."
+AUTH_GITHUB_ID="..."
+AUTH_GITHUB_SECRET="..."
+AUTH_GOOGLE_ID="..."
+AUTH_GOOGLE_SECRET="..."
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+EDGE_STORE_ACCESS_KEY="..."
+EDGE_STORE_SECRET_KEY="..."
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> **Atenção:** nunca versionar o `.env`. Em produção, variáveis de ambiente recomendada: `DATABASE_URL`, `DIRECT_URL` (usada em migrações), `AUTH_SECRET` e as OAuth/EdgeStore.
+
+Aplique as migrações e gere o client Prisma:
+
+```bash
+pnpm exec prisma migrate dev
+pnpm exec prisma generate
+```
+
+Rode o seed (dados de exemplo — cidades, tipos de animal, animais, competidores e rounds):
+
+```bash
+pnpm exec tsx prisma/seed.ts
+```
+
+Inicie o servidor de desenvolvimento:
+
+```bash
+pnpm dev
+```
+
+Abra [http://localhost:3000](http://localhost:3000).
+
+## Scripts
+
+| Comando                 | Descrição |
+|-------------------------|-----------|
+| `pnpm dev`              | Servidor de desenvolvimento (Turbopack) |
+| `pnpm build`            | Build de produção |
+| `pnpm start`            | Serve o build |
+| `pnpm lint`             | ESLint |
+| `pnpm exec prisma migrate dev` | Aplica/gera migrações |
+| `pnpm exec prisma generate`    | Regenera o client após mudanças no schema |
+| `pnpm exec tsx prisma/seed.ts` | Popula o banco com dados de exemplo |
+
+## Segurança & boas práticas
+
+- Upload da EdgeStore exige sessão (`beforeUpload`) e só permite **deletar arquivos próprios** (`beforeDelete`), evitando arquivos órfãos.
+- Rotas e actions de autenticação baseadas em sessão do Auth.js.
+
+Rode `pnpm lint` (e `pnpm build`) antes de considerar mudanças concluídas.
