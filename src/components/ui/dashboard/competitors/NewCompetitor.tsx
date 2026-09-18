@@ -2,15 +2,13 @@
 import { useState } from "react";
 
 import { newCompetitor } from "@/actions/Competitor";
+import FormCard from "@/components/ui/crud/FormCard";
+import SelectOptions from "@/components/ui/crud/SelectOptions";
+import UploadImage from "@/components/ui/crud/UploadImage";
+import { Field, FieldGroup } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import SelectOptionType from "@/types/SelectOptionType";
-
-import NewCard from "../../crud/NewCard";
-import SelectOptions from "../../crud/SelectOptions";
-import UploadImage from "../../crud/UploadImage";
-import { FieldGroup } from "../../field";
-import { Field } from "../../field";
-import { Input } from "../../input";
-import { Label } from "../../label";
 interface NewCompetitorProps {
   citys: SelectOptionType[];
 }
@@ -18,12 +16,12 @@ export default function NewCompetitor({ citys }: NewCompetitorProps) {
   const [selected, setSelected] = useState("");
   const [newImage, setNewImage] = useState("");
   return (
-    <NewCard action={newCompetitor} table="Competidor">
+    <FormCard action={newCompetitor} table="Adicionar Competidor">
       <FieldGroup>
         <Field>
           <input type="hidden" id="imageUrl" name="imageUrl" value={newImage} />
           <input type="hidden" id="cidadeId" name="cidadeId" value={selected} />
-          <UploadImage onImageChange={(url) => setNewImage(url)} />
+          <UploadImage onImageChange={(url) => setNewImage(url ?? "")} />
         </Field>
         <Field>
           <Label htmlFor="name">Nome</Label>
@@ -54,11 +52,11 @@ export default function NewCompetitor({ citys }: NewCompetitorProps) {
           <SelectOptions
             items={citys}
             value={selected}
-            onChanged={(value) => setSelected(value)}
+            onChanged={(value) => setSelected(value ?? "")}
             placeholder="Selecione a cidade"
           />
         </Field>
       </FieldGroup>
-    </NewCard>
+    </FormCard>
   );
 }

@@ -1,6 +1,7 @@
 import { getAnimals, getTiposAnimals } from "@/actions/animals";
 import { DataAnimal } from "@/components/ui/dashboard/animals/DataAnimal";
 import NewAnimal from "@/components/ui/dashboard/animals/NewAnimal";
+import HeaderNav from "@/components/ui/dashboard/HeaderNav";
 
 export default async function AnimalsPage() {
   const tipoAnimals = await getTiposAnimals();
@@ -12,16 +13,12 @@ export default async function AnimalsPage() {
   const animals = await getAnimals();
   return (
     <main className="m-3 p-2 w-full">
-      <header className="flex justify-between items-center gap-4">
-        <div className="flex flex-col">
-          <h1 className="text-text font-bold font-heading text-2xl">Animais</h1>
-          <p className="text-text-muted">
-            Acompanhamento e estatisticas dos atletas de quatro patas.
-          </p>
-        </div>
+      <HeaderNav
+        title="Animais"
+        description=" Acompanhamento e estatisticas dos atletas de quatro patas."
+      >
         <NewAnimal tiposAnimal={typedAnimals} />
-      </header>
-
+      </HeaderNav>
       <div>
         <DataAnimal animais={animals} tipoAnimal={typedAnimals} />
       </div>

@@ -1,57 +1,84 @@
-import { User } from "lucide-react";
 import Image from "next/image";
 
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardHeader,
+} from "@/components/ui/card";
 import ActionsCompetidor from "@/components/ui/dashboard/competitors/ActionsCompetitor";
-import { TailwindData } from "@/constants/TailwindData";
 import type { Prisma } from "@/generated/prisma/client";
+import SelectOptionType from "@/types/SelectOptionType";
 
-type CompetitorsWithCity = Prisma.CompetidorGetPayload<{
-  include: { cidade: true };
+type CompetitorsWithRounds = Prisma.CompetidorGetPayload<{
+  include: {
+    cidade: { include: { estado: true } };
+    rounds: { select: { animalId: true } };
+  };
 }>;
 
 interface DataCompetitorProps {
-  competitors: CompetitorsWithCity;
+  competitors: CompetitorsWithRounds;
+  citys: SelectOptionType[];
 }
-export default function DataCompetitor({ competitors }: DataCompetitorProps) {
+
+export default function DataCompetitor({
+  competitors,
+  citys,
+}: DataCompetitorProps) {
+  const totalRounds = competitors.rounds.length;
+  const totalAnimais = new Set(competitors.rounds.map((r) => r.animalId)).size;
+
   return (
     <Card>
-      <CardContent>
-        <CardHeader className="flex mb-2 border border-rodeo-surface border-b-text-muted/20">
+      <CardHeader className="gap-3">
+        <div className="flex items-center gap-3">
           {competitors.imageUrl ? (
             <Image
               src={competitors.imageUrl}
               alt={`Imagem de perfil de ${competitors.nome}`}
               width={46}
               height={46}
-              className="rounded-full mb-2"
+              className="size-11 shrink-0 rounded-full object-cover"
             />
           ) : (
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-rodeo-surface text-text-muted">
-              <User size={36} />
+            <div className="flex size-11 shrink-0 items-center justify-center rounded-full bg-rodeo-gold/20 font-heading text-lg font-semibold text-rodeo-gold">
+              {competitors.nome.slice(0, 1).toUpperCase()}
             </div>
           )}
-          <div className="ml-2">
-            <h2 className="font-semibold text-text text-base">
+          <div className="min-w-0">
+            <h2 className="truncate font-heading text-base font-semibold text-text">
               {competitors.nome}
             </h2>
-            <p className="text-text-muted mb-1">
-              {competitors.cidade.descricao} {competitors.cidade.estado}
+            <p className="truncate text-sm text-text-muted">
+              {competitors.cidade.descricao}{" "}
+              {competitors.cidade.estado?.descricao}
             </p>
+            <span className="mt-1 inline-flex items-center rounded-full bg-rodeo-gold/15 px-2 py-0.5 text-xs font-medium text-rodeo-gold">
+              {totalAnimais}{" "}
+              {totalAnimais === 1 ? "animal montado" : "animais montados"}
+            </span>
           </div>
-        </CardHeader>
-        <div className={`${TailwindData.centered} gap-4`}>
-          <div className="p-2 bg-rodeo-bg rounded-md">
-            <p className="text-base font-bold">{competitors.vitorias}</p>
-            <p>Vitórias</p>
+        </div>
+        <CardAction>
+          <ActionsCompetidor
+            id={competitors.id}
+            competidor={competitors}
+            citys={citys}
+          />
+        </CardAction>
+      </CardHeader>
+      <CardContent>
+        <div className="grid grid-cols-2 gap-3">
+          <div className="flex flex-col items-center rounded-lg bg-rodeo-bg p-3">
+            <span className="text-3xl font-bold text-text">
+              {competitors.vitorias}
+            </span>
+            <span className="mt-1 text-sm text-text-muted">Vitórias</span>
           </div>
-          <div className="p-2 bg-rodeo-bg rounded-md">
-            <p className="text-base font-bold">{competitors.vitorias}</p>
-            <p>Rounds</p>
-          </div>
-          <div className="p-2 bg-rodeo-bg rounded-md cursor-pointer flex flex-col items-center justify-center">
-            <ActionsCompetidor id={competitors.id} />
-            <p>Ações</p>
+          <div className="flex flex-col items-center rounded-lg bg-rodeo-bg p-3">
+            <span className="text-3xl font-bold text-text">{totalRounds}</span>
+            <span className="mt-1 text-sm text-text-muted">Rounds</span>
           </div>
         </div>
       </CardContent>

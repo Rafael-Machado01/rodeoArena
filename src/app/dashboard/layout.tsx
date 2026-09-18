@@ -15,7 +15,7 @@ export default async function RootLayout({
   return (
     <SidebarProvider>
       <AppSidebar user={user} />
-      <main>
+      <main className="w-full p-2 overflow-x-hidden">
         <SidebarTrigger />
         {children}
       </main>

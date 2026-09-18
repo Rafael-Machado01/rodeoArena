@@ -85,8 +85,8 @@ export async function editAnimal(
   }
   const dataForm = {
     id: formData.get("id") as string,
-    nome: formData.get("nome") as string,
-    tipoAnimal: formData.get("tipoAnimal") as string,
+    nome: formData.get("name") as string,
+    tipoAnimal: formData.get("tipoAnimalId") as string,
     imageUrl: formData.get("imageUrl") as string,
   };
 
@@ -123,4 +123,15 @@ export async function editAnimal(
   }
   revalidatePath("/dashboard/animals");
   return { message: "Animal editado com sucesso!", type: "success" };
+}
+
+export async function getAllAnimals() {
+  const loggedUser = await getCurrentUser();
+  if (!loggedUser) {
+    return null;
+  }
+  const animals = await prisma.animal.findMany({
+    include: { tipoAnimal: true },
+  });
+  return animals;
 }

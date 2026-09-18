@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import { deleteAnimal } from "@/actions/animals";
 import { Button } from "@/components/ui/button";
+import DeleteCard from "@/components/ui/crud/DeleteCard";
 import EditAnimal from "@/components/ui/dashboard/animals/EditAnimal";
 import {
   DropdownMenu,
@@ -23,16 +24,14 @@ import {
 } from "@/components/ui/table";
 import { TailwindData } from "@/constants/TailwindData";
 import type { Prisma } from "@/generated/prisma/browser";
-import type TipoAnimalOption from "@/types/TipoAnimal";
-
-import DeleteCard from "../../crud/DeleteCard";
+import SelectOptionType from "@/types/SelectOptionType";
 type AnimalWithTipo = Prisma.AnimalGetPayload<{
   include: { tipoAnimal: true };
 }>;
 
 interface DataAnimalProps {
   animais: AnimalWithTipo[];
-  tipoAnimal: TipoAnimalOption[];
+  tipoAnimal: SelectOptionType[];
 }
 
 export function DataAnimal({ animais, tipoAnimal }: DataAnimalProps) {
@@ -90,20 +89,20 @@ export function DataAnimal({ animais, tipoAnimal }: DataAnimalProps) {
                     Deletar
                   </DropdownMenuItem>
                 </DropdownMenuContent>
-                <DeleteCard
-                  id={animal.id}
-                  open={deleteTarget === animal.id}
-                  onClose={() => setDeleteTarget(null)}
-                  table="Animal"
-                  action={() => deleteAnimal(animal.id)}
-                />
-                <EditAnimal
-                  animal={animal}
-                  items={tipoAnimal}
-                  open={editTarget === animal.id}
-                  onClose={() => setEditTarget(null)}
-                />
               </DropdownMenu>
+              <DeleteCard
+                id={animal.id}
+                open={deleteTarget === animal.id}
+                onClose={() => setDeleteTarget(null)}
+                table="Animal"
+                action={() => deleteAnimal(animal.id)}
+              />
+              <EditAnimal
+                open={editTarget === animal.id}
+                onClose={() => setEditTarget(null)}
+                animal={animal}
+                tipos={tipoAnimal}
+              />
             </TableCell>
           </TableRow>
         ))}

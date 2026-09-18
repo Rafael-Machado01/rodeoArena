@@ -2,9 +2,8 @@ import {
   LayoutDashboard,
   ListOrdered,
   type LucideIcon,
-  Medal,
+  MapPinHouse,
   PawPrint,
-  Target,
   UserGroup,
 } from "lucide-react";
 
@@ -29,12 +28,6 @@ export const DashboardLinks: DashboardLinksProps[] = [
     href: "/dashboard/rounds",
   },
   {
-    id: 3,
-    text: "Simulador",
-    icon: Target,
-    href: "/dashboard/simulator",
-  },
-  {
     id: 4,
     text: "Competidores",
     icon: UserGroup,
@@ -47,9 +40,9 @@ export const DashboardLinks: DashboardLinksProps[] = [
     href: "/dashboard/animals",
   },
   {
-    id: 6,
-    text: "Ranking",
-    icon: Medal,
-    href: "/dashboard/ranking",
+    id: 7,
+    text: "Cidades",
+    icon: MapPinHouse,
+    href: "/dashboard/citys",
   },
 ];

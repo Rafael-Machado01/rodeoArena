@@ -3,28 +3,31 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Logo from "@/components/ui/home/Logo";
 import { NavbarLinks } from "@/constants/Navbar-Links";
-import { TailwindData } from "@/constants/TailwindData";
+
 export default function Navbar() {
   return (
-    <header className="sticky bg-rodeo-bg h-10 top-0 z-50 shadow-lg border-b border-rodeo-bronze/50">
-      <div className="mx-2 md:mx-10 flex items-center justify-between text-center">
+    <header className="sticky top-0 z-50 border-b border-rodeo-gold/20 bg-rodeo-bg/80 backdrop-blur-md">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:px-8">
         <Logo />
-        <div className="flex gap-1 md:gap-8 items-center mt-0.5">
+        <nav className="flex items-center gap-6">
           {NavbarLinks.map((link) => (
             <Link
-              className={`${TailwindData.linkHover} text-xs md:text-base`}
               key={link.id}
               href={link.href}
+              className="relative text-sm font-medium text-text-muted transition-colors hover:text-text after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-linear-to-r after:from-rodeo-gold after:to-rodeo-bronze after:transition-all hover:after:w-full"
             >
               {link.text}
             </Link>
           ))}
           <Link href="/login">
-            <Button className=" rounded-md" variant="default" size="lg">
+            <Button
+              className="border-rodeo-gold/40 bg-rodeo-surface text-rodeo-gold hover:bg-rodeo-gold/10"
+              size="lg"
+            >
               Acessar
             </Button>
           </Link>
-        </div>
+        </nav>
       </div>
     </header>
   );
